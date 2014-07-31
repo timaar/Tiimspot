@@ -29,7 +29,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>webapptest</finalName>
+		<finalName>tiimspot</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
