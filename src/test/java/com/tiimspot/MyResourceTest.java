@@ -10,8 +10,15 @@ import static org.junit.Assert.assertEquals;
 
 import com.tiimspot.MyResource;
 
+/**
+ * The Class MyResourceTest.
+ *
+ * @author Tim Van Meerbeeck
+ * @since 5-aug-2014
+ */
 public class MyResourceTest extends JerseyTest {
 
+    /* {@inheritDoc}*/
     @Override
     protected Application configure() {
         return new ResourceConfig(MyResource.class);
@@ -22,7 +29,7 @@ public class MyResourceTest extends JerseyTest {
      */
     @Test
     public void testGetIt() {
-        final String responseMsg = target().path("myresource").request().get(String.class);
+        final String responseMsg = target().path("/myresource").request().get(String.class);
 
         assertEquals("Hello, Heroku!", responseMsg);
     }
