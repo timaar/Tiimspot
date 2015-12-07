@@ -1,0 +1,92 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAdresLabel" translate="tiimspotApp.adres.home.createOrEditLabel">Create or edit a Adres</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="adres.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.adres.straat" for="field_straat">Straat</label>
+            <input type="text" class="form-control" name="straat" id="field_straat"
+                    ng-model="adres.straat"
+                    required />
+            <div ng-show="editForm.straat.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.straat.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.adres.huisnummer" for="field_huisnummer">Huisnummer</label>
+            <input type="text" class="form-control" name="huisnummer" id="field_huisnummer"
+                    ng-model="adres.huisnummer"
+                    required />
+            <div ng-show="editForm.huisnummer.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.huisnummer.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.adres.busnummer" for="field_busnummer">Busnummer</label>
+            <input type="text" class="form-control" name="busnummer" id="field_busnummer"
+                    ng-model="adres.busnummer"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.adres.postcode" for="field_postcode">Postcode</label>
+            <input type="text" class="form-control" name="postcode" id="field_postcode"
+                    ng-model="adres.postcode"
+                    required />
+            <div ng-show="editForm.postcode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.postcode.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.adres.gemeente" for="field_gemeente">Gemeente</label>
+            <input type="text" class="form-control" name="gemeente" id="field_gemeente"
+                    ng-model="adres.gemeente"
+                    required />
+            <div ng-show="editForm.gemeente.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.gemeente.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.adres.landISO3" for="field_landISO3">LandISO3</label>
+            <input type="text" class="form-control" name="landISO3" id="field_landISO3"
+                    ng-model="adres.landISO3"
+                    required />
+            <div ng-show="editForm.landISO3.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.landISO3.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

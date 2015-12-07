@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPersoonEventLabel" translate="tiimspotApp.persoonEvent.home.createOrEditLabel">Create or edit a PersoonEvent</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="persoonEvent.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.persoonEvent.aanwezigheidsStatus" for="field_aanwezigheidsStatus">AanwezigheidsStatus</label>
+            <select class="form-control" name="aanwezigheidsStatus" ng-model="persoonEvent.aanwezigheidsStatus" id="field_aanwezigheidsStatus" required>
+                <option value="ONBEKEND" translate="tiimspotApp.AanwezigheidsStatus.ONBEKEND">ONBEKEND</option>
+                <option value="GESELECTEERD" translate="tiimspotApp.AanwezigheidsStatus.GESELECTEERD">GESELECTEERD</option>
+                <option value="NIET_GESELECTEERD" translate="tiimspotApp.AanwezigheidsStatus.NIET_GESELECTEERD">NIET_GESELECTEERD</option>
+                <option value="VERWITTIGD" translate="tiimspotApp.AanwezigheidsStatus.VERWITTIGD">VERWITTIGD</option>
+                <option value="BLESSURE" translate="tiimspotApp.AanwezigheidsStatus.BLESSURE">BLESSURE</option>
+            </select>
+            <div ng-show="editForm.aanwezigheidsStatus.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.aanwezigheidsStatus.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="tiimspotApp.persoonEvent.eventScore" for="field_eventScore">eventScore</label>
+            <select class="form-control" id="field_eventScore" name="eventScore" ng-model="persoonEvent.eventScore" ng-options="EventScore as EventScore.id for EventScore in eventscores | orderBy:'id' track by EventScore.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="tiimspotApp.persoonEvent.event" for="field_event">event</label>
+            <select class="form-control" id="field_event" name="event" ng-model="persoonEvent.event" ng-options="Event as Event.id for Event in events track by Event.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="tiimspotApp.persoonEvent.persoon" for="field_persoon">persoon</label>
+            <select class="form-control" id="field_persoon" name="persoon" ng-model="persoonEvent.persoon" ng-options="Persoon as Persoon.id for Persoon in persoons track by Persoon.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

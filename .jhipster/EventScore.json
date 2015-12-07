@@ -1,0 +1,20 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "discipline",
+            "fieldType": "Score",
+            "fieldValues": "ONTOELAATBAAR,ZWAK,NORMAAL,GOED"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "techniek",
+            "fieldType": "Score",
+            "fieldValues": ""
+        }
+    ],
+    "changelogDate": "20151207183556",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}

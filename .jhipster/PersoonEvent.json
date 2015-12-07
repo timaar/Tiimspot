@@ -1,0 +1,54 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "eventScore",
+            "otherEntityName": "EventScore",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "persoonEvent"
+        },		
+		{
+            "relationshipId": 2,
+            "relationshipName": "event",
+            "otherEntityName": "Event",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "event"
+        },		
+		{
+            "relationshipId": 2,
+            "relationshipName": "persoon",
+            "otherEntityName": "Persoon",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "persoon"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "comment",
+            "otherEntityName": "Comment",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "persoonEvent"
+        }		
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "aanwezigheidsStatus",
+            "fieldType": "AanwezigheidsStatus",
+            "fieldValues": "ONBEKEND,GESELECTEERD,NIET_GESELECTEERD,VERWITTIGD,BLESSURE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151207191547",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}

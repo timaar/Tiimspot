@@ -1,0 +1,69 @@
+<div>
+    <h2 translate="tiimspotApp.persoonEvent.home.title">PersoonEvents</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="persoonEvent.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="tiimspotApp.persoonEvent.home.createLabel">Create a new PersoonEvent</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a PersoonEvent</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="tiimspotApp.persoonEvent.aanwezigheidsStatus">AanwezigheidsStatus</th>
+                    <th translate="tiimspotApp.persoonEvent.eventScore">eventScore</th>
+                    <th translate="tiimspotApp.persoonEvent.event">event</th>
+                    <th translate="tiimspotApp.persoonEvent.persoon">persoon</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="persoonEvent in persoonEvents track by persoonEvent.id">
+                    <td><a ui-sref="persoonEvent.detail({id:persoonEvent.id})">{{persoonEvent.id}}</a></td>
+                    <td translate="{{'tiimspotApp.AanwezigheidsStatus.' + persoonEvent.aanwezigheidsStatus}}">{{persoonEvent.aanwezigheidsStatus}}</td>
+                    <td>
+                        <a ui-sref="EventScore.detail({id:persoonEvent.eventScore.id})">{{persoonEvent.eventScore.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="Event.detail({id:persoonEvent.event.id})">{{persoonEvent.event.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="Persoon.detail({id:persoonEvent.persoon.id})">{{persoonEvent.persoon.id}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="persoonEvent.detail({id:persoonEvent.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="persoonEvent.edit({id:persoonEvent.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="persoonEvent.delete({id:persoonEvent.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

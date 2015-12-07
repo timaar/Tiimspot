@@ -1,0 +1,28 @@
+{
+    "tiimspotApp": {
+        "persoon" : {
+            "home": {
+                "title": "Persoons",
+                "createLabel": "Create a new Persoon",
+                "createOrEditLabel": "Create or edit a Persoon"
+            },
+            "created": "A new Persoon is created with identifier {{ param }}",
+            "updated": "A Persoon is updated with identifier {{ param }}",
+            "deleted": "A Persoon is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Persoon {{ id }}?"
+            },
+            "detail": {
+                "title": "Persoon"
+            },
+            "voornaam": "Voornaam",
+            "naam": "Naam",
+            "geslacht": "Geslacht",
+            "geboorteDatum": "GeboorteDatum",
+            "adres": "Adres",
+            "contactinfo": "Contactinfo",
+            "comment": "Comment",
+            "ouder": "Ouder"
+        }
+    }
+}

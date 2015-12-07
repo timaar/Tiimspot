@@ -1,0 +1,29 @@
+{
+    "tiimspotApp": {
+        "persoon" : {
+            "home": {
+                "title": "Persoons",
+                "createLabel": "Créer un nouveau Persoon",
+                "createOrEditLabel": "Créer ou éditer un Persoon"
+            },
+            "created": "Un nouveau Persoon a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Persoon avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Persoon avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Persoon {{ id }} ?"
+            },
+            "detail": {
+                "title": "Persoon"
+            },
+            "voornaam": "Voornaam",
+            "naam": "Naam",
+            "geslacht": "Geslacht",
+            "geboorteDatum": "GeboorteDatum",
+            "adres": "Adres",
+            "contactinfo": "Contactinfo",
+            "comment": "Comment",
+            "ouder": "Ouder"
+        }
+    }
+}
+

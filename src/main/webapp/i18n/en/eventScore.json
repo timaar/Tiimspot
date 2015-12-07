@@ -1,0 +1,22 @@
+{
+    "tiimspotApp": {
+        "eventScore" : {
+            "home": {
+                "title": "EventScores",
+                "createLabel": "Create a new EventScore",
+                "createOrEditLabel": "Create or edit a EventScore"
+            },
+            "created": "A new EventScore is created with identifier {{ param }}",
+            "updated": "A EventScore is updated with identifier {{ param }}",
+            "deleted": "A EventScore is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete EventScore {{ id }}?"
+            },
+            "detail": {
+                "title": "EventScore"
+            },
+            "discipline": "Discipline",
+            "techniek": "Techniek"
+        }
+    }
+}

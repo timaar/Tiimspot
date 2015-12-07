@@ -1,0 +1,23 @@
+{
+    "tiimspotApp": {
+        "ouder" : {
+            "home": {
+                "title": "Ouders",
+                "createLabel": "Créer un nouveau Ouder",
+                "createOrEditLabel": "Créer ou éditer un Ouder"
+            },
+            "created": "Un nouveau Ouder a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Ouder avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Ouder avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Ouder {{ id }} ?"
+            },
+            "detail": {
+                "title": "Ouder"
+            },
+            "persoon": "Persoon",
+            "comment": "Comment"
+        }
+    }
+}
+

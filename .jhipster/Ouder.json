@@ -1,0 +1,25 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "persoon",
+            "otherEntityName": "persoon",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "ouder"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "comment",
+            "otherEntityName": "Comment",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "ouder"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20151207200224",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}

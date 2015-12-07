@@ -1,0 +1,63 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "adres",
+            "otherEntityName": "Adres",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "event"
+        },
+		{
+            "relationshipId": 2,
+            "relationshipName": "persoonEvent",
+            "otherEntityName": "PersoonEvent",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "event"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "comment",
+            "otherEntityName": "Comment",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "event"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "naam",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "2"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "datum",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "type",
+            "fieldType": "EventType",
+            "fieldValues": "MATCH,TRAINING,TORNOOI,TEAMBUILDING",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151207181025",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}

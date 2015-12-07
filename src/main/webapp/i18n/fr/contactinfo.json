@@ -1,0 +1,23 @@
+{
+    "tiimspotApp": {
+        "contactinfo" : {
+            "home": {
+                "title": "Contactinfos",
+                "createLabel": "Créer un nouveau Contactinfo",
+                "createOrEditLabel": "Créer ou éditer un Contactinfo"
+            },
+            "created": "Un nouveau Contactinfo a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Contactinfo avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Contactinfo avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Contactinfo {{ id }} ?"
+            },
+            "detail": {
+                "title": "Contactinfo"
+            },
+            "email": "Email",
+            "telefoonnummer": "Telefoonnummer"
+        }
+    }
+}
+

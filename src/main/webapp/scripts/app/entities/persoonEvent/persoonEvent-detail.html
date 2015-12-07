@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="tiimspotApp.persoonEvent.detail.title">PersoonEvent</span> {{persoonEvent.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.persoonEvent.aanwezigheidsStatus">AanwezigheidsStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'tiimspotApp.AanwezigheidsStatus.' + persoonEvent.aanwezigheidsStatus}}">{{persoonEvent.aanwezigheidsStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.persoonEvent.eventScore">eventScore</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="EventScore.detail({id:persoonEvent.eventScore.id})">{{persoonEvent.eventScore.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.persoonEvent.event">event</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="Event.detail({id:persoonEvent.event.id})">{{persoonEvent.event.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.persoonEvent.persoon">persoon</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="Persoon.detail({id:persoonEvent.persoon.id})">{{persoonEvent.persoon.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

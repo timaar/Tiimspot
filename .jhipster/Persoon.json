@@ -1,0 +1,79 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "adres",
+            "otherEntityName": "Adres",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "persoon"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "contactinfo",
+            "otherEntityName": "Contactinfo",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "persoon"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "comment",
+            "otherEntityName": "Comment",
+            "relationshipType": "one-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "persoon"
+        },
+        {
+            "relationshipId": 4,            
+            "relationshipName": "ouder",
+            "otherEntityName": "Ouder",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "ouder"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "voornaam",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "1"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "naam",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "geslacht",
+            "fieldType": "Geslacht",
+            "fieldValues": "M,V",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "geboorteDatum",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20151207180327",
+    "dto": "no",
+    "pagination": "no"
+}

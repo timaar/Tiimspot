@@ -6,6 +6,16 @@
             "home": "Home",
             "entities": {
                 "main": "Entities",
+                "persoon": "Persoon",
+                "adres": "Adres",
+                "contactinfo": "Contactinfo",
+                "event": "Event",
+                "comment": "Comment",
+                "eventScore": "EventScore",
+                "persoontest": "Persoontest",
+                "persoonEvent": "PersoonEvent",
+                "persoonevent": "Persoonevent",
+                "ouder": "Ouder",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

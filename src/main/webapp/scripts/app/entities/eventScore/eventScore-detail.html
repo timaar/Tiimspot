@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="tiimspotApp.eventScore.detail.title">EventScore</span> {{eventScore.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.eventScore.discipline">Discipline</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'tiimspotApp.Score.' + eventScore.discipline}}">{{eventScore.discipline}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.eventScore.techniek">Techniek</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'tiimspotApp.Score.' + eventScore.techniek}}">{{eventScore.techniek}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

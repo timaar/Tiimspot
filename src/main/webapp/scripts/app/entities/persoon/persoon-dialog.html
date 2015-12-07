@@ -1,0 +1,95 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPersoonLabel" translate="tiimspotApp.persoon.home.createOrEditLabel">Create or edit a Persoon</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="persoon.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.persoon.voornaam" for="field_voornaam">Voornaam</label>
+            <input type="text" class="form-control" name="voornaam" id="field_voornaam"
+                    ng-model="persoon.voornaam"
+                    required ng-minlength="1" />
+            <div ng-show="editForm.voornaam.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.voornaam.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.voornaam.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                    This field is required to be at least 1 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.persoon.naam" for="field_naam">Naam</label>
+            <input type="text" class="form-control" name="naam" id="field_naam"
+                    ng-model="persoon.naam"
+                    required />
+            <div ng-show="editForm.naam.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.naam.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.persoon.geslacht" for="field_geslacht">Geslacht</label>
+            <select class="form-control" name="geslacht" ng-model="persoon.geslacht" id="field_geslacht" required>
+                <option value="M" translate="tiimspotApp.Geslacht.M">M</option>
+                <option value="V" translate="tiimspotApp.Geslacht.V">V</option>
+            </select>
+            <div ng-show="editForm.geslacht.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.geslacht.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.persoon.geboorteDatum" for="field_geboorteDatum">GeboorteDatum</label>
+            <input type="datetime-local" class="form-control" name="geboorteDatum" id="field_geboorteDatum"
+                    ng-model="persoon.geboorteDatum"
+                    required />
+            <div ng-show="editForm.geboorteDatum.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.geboorteDatum.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.geboorteDatum.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="tiimspotApp.persoon.adres" for="field_adres">adres</label>
+            <select class="form-control" id="field_adres" name="adres" ng-model="persoon.adres" ng-options="Adres as Adres.id for Adres in adress | orderBy:'id' track by Adres.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="tiimspotApp.persoon.contactinfo" for="field_contactinfo">contactinfo</label>
+            <select class="form-control" id="field_contactinfo" name="contactinfo" ng-model="persoon.contactinfo" ng-options="Contactinfo as Contactinfo.id for Contactinfo in contactinfos | orderBy:'id' track by Contactinfo.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

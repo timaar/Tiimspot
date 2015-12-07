@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span translate="tiimspotApp.adres.detail.title">Adres</span> {{adres.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.adres.straat">Straat</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{adres.straat}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.adres.huisnummer">Huisnummer</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{adres.huisnummer}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.adres.busnummer">Busnummer</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{adres.busnummer}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.adres.postcode">Postcode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{adres.postcode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.adres.gemeente">Gemeente</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{adres.gemeente}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.adres.landISO3">LandISO3</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{adres.landISO3}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

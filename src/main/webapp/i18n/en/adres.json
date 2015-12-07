@@ -1,0 +1,26 @@
+{
+    "tiimspotApp": {
+        "adres" : {
+            "home": {
+                "title": "Adress",
+                "createLabel": "Create a new Adres",
+                "createOrEditLabel": "Create or edit a Adres"
+            },
+            "created": "A new Adres is created with identifier {{ param }}",
+            "updated": "A Adres is updated with identifier {{ param }}",
+            "deleted": "A Adres is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Adres {{ id }}?"
+            },
+            "detail": {
+                "title": "Adres"
+            },
+            "straat": "Straat",
+            "huisnummer": "Huisnummer",
+            "busnummer": "Busnummer",
+            "postcode": "Postcode",
+            "gemeente": "Gemeente",
+            "landISO3": "LandISO3"
+        }
+    }
+}
