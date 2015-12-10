@@ -5,17 +5,5 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207173954_added_entity_Persoon.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207174237_added_entity_Adres.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207175254_added_entity_Contactinfo.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207180327_added_entity_Persoon.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207181025_added_entity_Event.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207182618_added_entity_Comment.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207183141_added_entity_Comment.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207183556_added_entity_EventScore.xml" relativeToChangelogFile="false"/>  
-    <include file="classpath:config/liquibase/changelog/20151207191547_added_entity_PersoonEvent.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207191547_added_entity_Persoonevent.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207195353_added_entity_Ouder.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20151207200224_added_entity_Ouder.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

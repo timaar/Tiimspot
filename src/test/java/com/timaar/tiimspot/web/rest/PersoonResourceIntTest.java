@@ -61,6 +61,8 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
     private static final ZonedDateTime DEFAULT_GEBOORTE_DATUM = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
     private static final ZonedDateTime UPDATED_GEBOORTE_DATUM = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
     private static final String DEFAULT_GEBOORTE_DATUM_STR = dateTimeFormatter.format(DEFAULT_GEBOORTE_DATUM);
+    private static final String DEFAULT_TELEFOONNUMMER = "AAAAA";
+    private static final String UPDATED_TELEFOONNUMMER = "BBBBB";
 
     @Inject
     private PersoonRepository persoonRepository;
@@ -96,6 +98,7 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
         persoon.setNaam(DEFAULT_NAAM);
         persoon.setGeslacht(DEFAULT_GESLACHT);
         persoon.setGeboorteDatum(DEFAULT_GEBOORTE_DATUM);
+        persoon.setTelefoonnummer(DEFAULT_TELEFOONNUMMER);
     }
 
     @Test
@@ -118,6 +121,7 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
         assertThat(testPersoon.getNaam()).isEqualTo(DEFAULT_NAAM);
         assertThat(testPersoon.getGeslacht()).isEqualTo(DEFAULT_GESLACHT);
         assertThat(testPersoon.getGeboorteDatum()).isEqualTo(DEFAULT_GEBOORTE_DATUM);
+        assertThat(testPersoon.getTelefoonnummer()).isEqualTo(DEFAULT_TELEFOONNUMMER);
     }
 
     @Test
@@ -206,7 +210,8 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
                 .andExpect(jsonPath("$.[*].voornaam").value(hasItem(DEFAULT_VOORNAAM.toString())))
                 .andExpect(jsonPath("$.[*].naam").value(hasItem(DEFAULT_NAAM.toString())))
                 .andExpect(jsonPath("$.[*].geslacht").value(hasItem(DEFAULT_GESLACHT.toString())))
-                .andExpect(jsonPath("$.[*].geboorteDatum").value(hasItem(DEFAULT_GEBOORTE_DATUM_STR)));
+                .andExpect(jsonPath("$.[*].geboorteDatum").value(hasItem(DEFAULT_GEBOORTE_DATUM_STR)))
+                .andExpect(jsonPath("$.[*].telefoonnummer").value(hasItem(DEFAULT_TELEFOONNUMMER.toString())));
     }
 
     @Test
@@ -223,7 +228,8 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
             .andExpect(jsonPath("$.voornaam").value(DEFAULT_VOORNAAM.toString()))
             .andExpect(jsonPath("$.naam").value(DEFAULT_NAAM.toString()))
             .andExpect(jsonPath("$.geslacht").value(DEFAULT_GESLACHT.toString()))
-            .andExpect(jsonPath("$.geboorteDatum").value(DEFAULT_GEBOORTE_DATUM_STR));
+            .andExpect(jsonPath("$.geboorteDatum").value(DEFAULT_GEBOORTE_DATUM_STR))
+            .andExpect(jsonPath("$.telefoonnummer").value(DEFAULT_TELEFOONNUMMER.toString()));
     }
 
     @Test
@@ -247,6 +253,7 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
         persoon.setNaam(UPDATED_NAAM);
         persoon.setGeslacht(UPDATED_GESLACHT);
         persoon.setGeboorteDatum(UPDATED_GEBOORTE_DATUM);
+        persoon.setTelefoonnummer(UPDATED_TELEFOONNUMMER);
 
         restPersoonMockMvc.perform(put("/api/persoons")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -261,6 +268,7 @@ private static final Geslacht DEFAULT_GESLACHT = Geslacht.M;
         assertThat(testPersoon.getNaam()).isEqualTo(UPDATED_NAAM);
         assertThat(testPersoon.getGeslacht()).isEqualTo(UPDATED_GESLACHT);
         assertThat(testPersoon.getGeboorteDatum()).isEqualTo(UPDATED_GEBOORTE_DATUM);
+        assertThat(testPersoon.getTelefoonnummer()).isEqualTo(UPDATED_TELEFOONNUMMER);
     }
 
     @Test

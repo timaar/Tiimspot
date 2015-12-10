@@ -33,10 +33,8 @@
             <column name="geboorte_datum" type="timestamp">
                 <constraints nullable="false" />
             </column>
+            <column name="telefoonnummer" type="varchar(255)"/>
             <column name="adres_id" type="bigint">
-                <constraints unique="true"/>
-            </column>
-            <column name="contactinfo_id" type="bigint">
                 <constraints unique="true"/>
             </column>
         </createTable>
@@ -48,12 +46,6 @@
                                  constraintName="fk_persoon_adres_id"
                                  referencedColumnNames="id"
                                  referencedTableName="adres"/>
-
-        <addForeignKeyConstraint baseColumnNames="contactinfo_id"
-                                 baseTableName="persoon"
-                                 constraintName="fk_persoon_contactinfo_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="contactinfo"/>
 
     </changeSet>
 </databaseChangeLog>

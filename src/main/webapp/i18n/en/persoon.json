@@ -19,8 +19,8 @@
             "naam": "Naam",
             "geslacht": "Geslacht",
             "geboorteDatum": "GeboorteDatum",
+            "telefoonnummer": "Telefoonnummer",
             "adres": "Adres",
-            "contactinfo": "Contactinfo",
             "comment": "Comment",
             "ouder": "Ouder"
         }

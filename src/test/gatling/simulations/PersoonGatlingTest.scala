@@ -67,7 +67,7 @@ class PersoonGatlingTest extends Simulation {
             .exec(http("Create new persoon")
             .post("/api/persoons")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "voornaam":"SAMPLE_TEXT", "naam":"SAMPLE_TEXT", "geslacht":null, "geboorteDatum":"2020-01-01T00:00:00.000Z"}""")).asJSON
+            .body(StringBody("""{"id":null, "voornaam":"SAMPLE_TEXT", "naam":"SAMPLE_TEXT", "geslacht":null, "geboorteDatum":"2020-01-01T00:00:00.000Z", "telefoonnummer":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_persoon_url")))
             .pause(10)

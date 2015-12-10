@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tiimspotApp')
-    .controller('PersoonDetailController', function ($scope, $rootScope, $stateParams, entity, Persoon, Adres, Contactinfo, Comment, Ouder) {
+    .controller('PersoonDetailController', function ($scope, $rootScope, $stateParams, entity, Persoon, Adres, Comment, Ouder) {
         $scope.persoon = entity;
         $scope.load = function (id) {
             Persoon.get({id: id}, function(result) {

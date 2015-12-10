@@ -11,15 +11,6 @@
         },
         {
             "relationshipId": 2,
-            "relationshipName": "contactinfo",
-            "otherEntityName": "Contactinfo",
-            "relationshipType": "one-to-one",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "persoon"
-        },
-        {
-            "relationshipId": 3,
             "relationshipName": "comment",
             "otherEntityName": "Comment",
             "relationshipType": "one-to-many",
@@ -28,7 +19,7 @@
             "otherEntityRelationshipName": "persoon"
         },
         {
-            "relationshipId": 4,            
+            "relationshipId": 3,            
             "relationshipName": "ouder",
             "otherEntityName": "Ouder",
             "relationshipType": "many-to-many",
@@ -71,7 +62,12 @@
             "fieldValidateRules": [
                 "required"
             ]
-        }
+        },
+		{
+		    "fieldId": 5,
+            "fieldName": "telefoonnummer",
+            "fieldType": "String"
+		}
     ],
     "changelogDate": "20151207180327",
     "dto": "no",

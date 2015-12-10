@@ -46,9 +46,10 @@ public class Persoon implements Serializable {
     @Column(name = "geboorte_datum", nullable = false)
     private ZonedDateTime geboorteDatum;
 
-    @OneToOne    private Adres adres;
+    @Column(name = "telefoonnummer")
+    private String telefoonnummer;
 
-    @OneToOne    private Contactinfo contactinfo;
+    @OneToOne    private Adres adres;
 
     @OneToMany(mappedBy = "persoon")
     @JsonIgnore
@@ -100,20 +101,20 @@ public class Persoon implements Serializable {
         this.geboorteDatum = geboorteDatum;
     }
 
+    public String getTelefoonnummer() {
+        return telefoonnummer;
+    }
+
+    public void setTelefoonnummer(String telefoonnummer) {
+        this.telefoonnummer = telefoonnummer;
+    }
+
     public Adres getAdres() {
         return adres;
     }
 
     public void setAdres(Adres Adres) {
         this.adres = Adres;
-    }
-
-    public Contactinfo getContactinfo() {
-        return contactinfo;
-    }
-
-    public void setContactinfo(Contactinfo Contactinfo) {
-        this.contactinfo = Contactinfo;
     }
 
     public Set<Comment> getComments() {
@@ -157,6 +158,7 @@ public class Persoon implements Serializable {
             ", naam='" + naam + "'" +
             ", geslacht='" + geslacht + "'" +
             ", geboorteDatum='" + geboorteDatum + "'" +
+            ", telefoonnummer='" + telefoonnummer + "'" +
             '}';
     }
 }

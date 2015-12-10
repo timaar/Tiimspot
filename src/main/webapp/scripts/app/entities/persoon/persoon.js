@@ -67,6 +67,7 @@ angular.module('tiimspotApp')
                                     naam: null,
                                     geslacht: null,
                                     geboorteDatum: null,
+                                    telefoonnummer: null,
                                     id: null
                                 };
                             }

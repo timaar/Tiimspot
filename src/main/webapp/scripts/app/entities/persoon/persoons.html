@@ -29,8 +29,8 @@
                     <th translate="tiimspotApp.persoon.naam">Naam</th>
                     <th translate="tiimspotApp.persoon.geslacht">Geslacht</th>
                     <th translate="tiimspotApp.persoon.geboorteDatum">GeboorteDatum</th>
+                    <th translate="tiimspotApp.persoon.telefoonnummer">Telefoonnummer</th>
                     <th translate="tiimspotApp.persoon.adres">adres</th>
-                    <th translate="tiimspotApp.persoon.contactinfo">contactinfo</th>
                     <th></th>
                 </tr>
             </thead>
@@ -41,11 +41,9 @@
                     <td>{{persoon.naam}}</td>
                     <td translate="{{'tiimspotApp.Geslacht.' + persoon.geslacht}}">{{persoon.geslacht}}</td>
                     <td>{{persoon.geboorteDatum | date:'medium'}}</td>
+                    <td>{{persoon.telefoonnummer}}</td>
                     <td>
                         <a ui-sref="Adres.detail({id:persoon.adres.id})">{{persoon.adres.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="Contactinfo.detail({id:persoon.contactinfo.id})">{{persoon.contactinfo.id}}</a>
                     </td>
                     <td>
                         <button type="submit"

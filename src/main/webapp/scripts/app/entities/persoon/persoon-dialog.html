@@ -70,16 +70,16 @@
                 </p>
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label" translate="tiimspotApp.persoon.telefoonnummer" for="field_telefoonnummer">Telefoonnummer</label>
+            <input type="text" class="form-control" name="telefoonnummer" id="field_telefoonnummer"
+                    ng-model="persoon.telefoonnummer"
+                     />
+        </div>
 
         <div class="form-group">
             <label translate="tiimspotApp.persoon.adres" for="field_adres">adres</label>
             <select class="form-control" id="field_adres" name="adres" ng-model="persoon.adres" ng-options="Adres as Adres.id for Adres in adress | orderBy:'id' track by Adres.id">
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label translate="tiimspotApp.persoon.contactinfo" for="field_contactinfo">contactinfo</label>
-            <select class="form-control" id="field_contactinfo" name="contactinfo" ng-model="persoon.contactinfo" ng-options="Contactinfo as Contactinfo.id for Contactinfo in contactinfos | orderBy:'id' track by Contactinfo.id">
                 <option value=""></option>
             </select>
         </div>

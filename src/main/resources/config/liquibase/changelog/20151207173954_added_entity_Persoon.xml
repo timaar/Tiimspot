@@ -36,9 +36,6 @@
             <column name="adres_id" type="bigint">
                 <constraints unique="true"/>
             </column>
-            <column name="contactinfo_id" type="bigint">
-                <constraints unique="true"/>
-            </column>
         </createTable>
         <dropDefaultValue tableName="persoon" columnName="geboorte_datum" columnDataType="datetime"/>
 
@@ -48,12 +45,6 @@
                                  constraintName="fk_persoon_adres_id"
                                  referencedColumnNames="id"
                                  referencedTableName="adres"/>
-
-        <addForeignKeyConstraint baseColumnNames="contactinfo_id"
-                                 baseTableName="persoon"
-                                 constraintName="fk_persoon_contactinfo_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="contactinfo"/>
 
     </changeSet>
 </databaseChangeLog>

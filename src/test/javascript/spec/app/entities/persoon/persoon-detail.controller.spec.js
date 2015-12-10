@@ -2,7 +2,7 @@
 
 describe('Persoon Detail Controller', function() {
     var $scope, $rootScope;
-    var MockEntity, MockPersoon, MockAdres, MockContactinfo, MockComment, MockOuder;
+    var MockEntity, MockPersoon, MockAdres, MockComment, MockOuder;
     var createController;
 
     beforeEach(inject(function($injector) {
@@ -11,7 +11,6 @@ describe('Persoon Detail Controller', function() {
         MockEntity = jasmine.createSpy('MockEntity');
         MockPersoon = jasmine.createSpy('MockPersoon');
         MockAdres = jasmine.createSpy('MockAdres');
-        MockContactinfo = jasmine.createSpy('MockContactinfo');
         MockComment = jasmine.createSpy('MockComment');
         MockOuder = jasmine.createSpy('MockOuder');
         
@@ -22,7 +21,6 @@ describe('Persoon Detail Controller', function() {
             'entity': MockEntity ,
             'Persoon': MockPersoon,
             'Adres': MockAdres,
-            'Contactinfo': MockContactinfo,
             'Comment': MockComment,
             'Ouder': MockOuder
         };
