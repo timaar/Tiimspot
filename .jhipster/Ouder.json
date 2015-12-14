@@ -11,10 +11,8 @@
         {
             "relationshipId": 2,
             "relationshipName": "comment",
-            "otherEntityName": "Comment",
-            "relationshipType": "one-to-many",
-            "otherEntityField": "id",
-            "ownerSide": true,
+            "otherEntityName": "comment",
+            "relationshipType": "one-to-many",            
             "otherEntityRelationshipName": "ouder"
         }
     ],

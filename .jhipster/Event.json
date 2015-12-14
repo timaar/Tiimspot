@@ -19,12 +19,10 @@
             "otherEntityRelationshipName": "event"
         },
         {
-            "relationshipId": 3,
+             "relationshipId": 3,
             "relationshipName": "comment",
-            "otherEntityName": "Comment",
-            "relationshipType": "one-to-many",
-            "otherEntityField": "id",
-            "ownerSide": true,
+            "otherEntityName": "comment",
+            "relationshipType": "one-to-many",            
             "otherEntityRelationshipName": "event"
         }
     ],

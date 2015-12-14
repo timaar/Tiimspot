@@ -54,8 +54,8 @@ public class Ouder implements Serializable {
         return comments;
     }
 
-    public void setComments(Set<Comment> Comments) {
-        this.comments = Comments;
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override

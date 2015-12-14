@@ -50,8 +50,8 @@ private static final Score DEFAULT_DISCIPLINE = Score.ONTOELAATBAAR;
     private static final Score UPDATED_DISCIPLINE = Score.ZWAK;
 
 
-private static final Score DEFAULT_TECHNIEK = Score.;
-    private static final Score UPDATED_TECHNIEK = Score.;
+private static final Score DEFAULT_TECHNIEK = Score.ONTOELAATBAAR;
+    private static final Score UPDATED_TECHNIEK = Score.ZWAK;
 
     @Inject
     private EventScoreRepository eventScoreRepository;

@@ -11,7 +11,7 @@
             "fieldId": 2,
             "fieldName": "techniek",
             "fieldType": "Score",
-            "fieldValues": ""
+            "fieldValues": "ONTOELAATBAAR,ZWAK,NORMAAL,GOED"
         }
     ],
     "changelogDate": "20151207183556",

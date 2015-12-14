@@ -86,7 +86,7 @@ public class PersoonResource {
     @Timed
     public List<Persoon> getAllPersoons() {
         log.debug("REST request to get all Persoons");
-        return persoonRepository.findAll();
+        return persoonRepository.findAllWithEagerRelationships();
     }
 
     /**
@@ -98,7 +98,7 @@ public class PersoonResource {
     @Timed
     public ResponseEntity<Persoon> getPersoon(@PathVariable Long id) {
         log.debug("REST request to get Persoon : {}", id);
-        return Optional.ofNullable(persoonRepository.findOne(id))
+        return Optional.ofNullable(persoonRepository.findOneWithEagerRelationships(id))
             .map(persoon -> new ResponseEntity<>(
                 persoon,
                 HttpStatus.OK))

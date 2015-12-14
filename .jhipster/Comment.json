@@ -1,5 +1,34 @@
 {
-    "relationships": [],
+    "relationships": [
+		{
+				"relationshipId": 1,
+				"relationshipName": "event",
+				"otherEntityName": "event",
+				"relationshipType": "many-to-one",
+				"otherEntityField": "id"
+		},
+		{
+				"relationshipId": 2,
+				"relationshipName": "ouder",
+				"otherEntityName": "ouder",
+				"relationshipType": "many-to-one",
+				"otherEntityField": "id"
+		},
+		{
+				"relationshipId": 3,
+				"relationshipName": "persoon",
+				"otherEntityName": "persoon",
+				"relationshipType": "many-to-one",
+				"otherEntityField": "id"
+		},
+		{
+				"relationshipId": 4,
+				"relationshipName": "persoonEvent",
+				"otherEntityName": "persoonEvent",
+				"relationshipType": "many-to-one",
+				"otherEntityField": "id"
+		}
+	],
     "fields": [
         {
             "fieldId": 1,
@@ -15,7 +44,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20151207183141",
+    "changelogDate": "20151215183141",
     "dto": "no",
     "pagination": "infinite-scroll"
 }

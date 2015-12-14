@@ -26,6 +26,38 @@
                     <span class="form-control-static">{{comment.creationDate | date:'medium'}}</span>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.comment.event">event</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="event.detail({id:comment.event.id})">{{comment.event.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.comment.ouder">ouder</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="ouder.detail({id:comment.ouder.id})">{{comment.ouder.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.comment.persoon">persoon</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="persoon.detail({id:comment.persoon.id})">{{comment.persoon.id}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.comment.persoonEvent">persoonEvent</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="persoonEvent.detail({id:comment.persoonEvent.id})">{{comment.persoonEvent.id}}</a>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

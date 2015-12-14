@@ -16,7 +16,11 @@
                 "title": "Comment"
             },
             "comment": "Comment",
-            "creationDate": "CreationDate"
+            "creationDate": "CreationDate",
+            "event": "Event",
+            "ouder": "Ouder",
+            "persoon": "Persoon",
+            "persoonEvent": "PersoonEvent"
         }
     }
 }

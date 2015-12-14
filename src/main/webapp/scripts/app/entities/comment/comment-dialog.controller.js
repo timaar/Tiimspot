@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('tiimspotApp').controller('CommentDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Comment',
-        function($scope, $stateParams, $modalInstance, entity, Comment) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Comment', 'Event', 'Ouder', 'Persoon', 'PersoonEvent',
+        function($scope, $stateParams, $modalInstance, entity, Comment, Event, Ouder, Persoon, PersoonEvent) {
 
         $scope.comment = entity;
+        $scope.events = Event.query();
+        $scope.ouders = Ouder.query();
+        $scope.persoons = Persoon.query();
+        $scope.persoonevents = PersoonEvent.query();
         $scope.load = function(id) {
             Comment.get({id : id}, function(result) {
                 $scope.comment = result;

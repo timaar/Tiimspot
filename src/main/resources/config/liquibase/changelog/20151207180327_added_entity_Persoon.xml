@@ -47,5 +47,28 @@
                                  referencedColumnNames="id"
                                  referencedTableName="adres"/>
 
+        <createTable tableName="persoon_ouder">
+            <column name="ouders_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="persoons_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="persoons_id, ouders_id" tableName="persoon_ouder"/>
+
+        <addForeignKeyConstraint baseColumnNames="persoons_id"
+                                 baseTableName="persoon_ouder"
+                                 constraintName="fk_persoon_ouder_ouder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="persoon"/>
+
+        <addForeignKeyConstraint baseColumnNames="ouders_id"
+                                 baseTableName="persoon_ouder"
+                                 constraintName="fk_ouder_ouder_persoon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ouder"/>
+        
     </changeSet>
 </databaseChangeLog>

@@ -12,19 +12,17 @@
         {
             "relationshipId": 2,
             "relationshipName": "comment",
-            "otherEntityName": "Comment",
-            "relationshipType": "one-to-many",
-            "otherEntityField": "id",
-            "ownerSide": true,
+            "otherEntityName": "comment",
+            "relationshipType": "one-to-many",            
             "otherEntityRelationshipName": "persoon"
         },
         {
-            "relationshipId": 3,            
+            "relationshipId": 3,
             "relationshipName": "ouder",
-            "otherEntityName": "Ouder",
+            "otherEntityName": "ouder",
             "relationshipType": "many-to-many",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "ouder"
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "fields": [

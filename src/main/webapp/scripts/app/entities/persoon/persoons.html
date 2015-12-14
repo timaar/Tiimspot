@@ -31,6 +31,7 @@
                     <th translate="tiimspotApp.persoon.geboorteDatum">GeboorteDatum</th>
                     <th translate="tiimspotApp.persoon.telefoonnummer">Telefoonnummer</th>
                     <th translate="tiimspotApp.persoon.adres">adres</th>
+                    <th translate="tiimspotApp.persoon.ouder">ouder</th>
                     <th></th>
                 </tr>
             </thead>
@@ -44,6 +45,11 @@
                     <td>{{persoon.telefoonnummer}}</td>
                     <td>
                         <a ui-sref="Adres.detail({id:persoon.adres.id})">{{persoon.adres.id}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="ouder in persoon.ouders">
+                            <a class="form-control-static" ui-sref="ouder.detail({id: {{ouder.id}}})">{{ouder.id}}</a>{{$last ? '' : ', '}}
+                        <span>
                     </td>
                     <td>
                         <button type="submit"

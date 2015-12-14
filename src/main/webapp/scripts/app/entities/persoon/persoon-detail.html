@@ -58,6 +58,16 @@
                     <a class="form-control-static" ui-sref="Adres.detail({id:persoon.adres.id})">{{persoon.adres.id}}</a>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <span translate="tiimspotApp.persoon.ouder">ouder</span>
+                </td>
+                <td>
+                    <span ng-repeat="ouder in persoon.ouders">
+                        <a class="form-control-static" ui-sref="ouder.detail({id: {{ouder.id}}})">{{ouder.id}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

@@ -27,6 +27,10 @@
                     <th translate="global.field.id">ID</th>
                     <th translate="tiimspotApp.comment.comment">Comment</th>
                     <th translate="tiimspotApp.comment.creationDate">CreationDate</th>
+                    <th translate="tiimspotApp.comment.event">event</th>
+                    <th translate="tiimspotApp.comment.ouder">ouder</th>
+                    <th translate="tiimspotApp.comment.persoon">persoon</th>
+                    <th translate="tiimspotApp.comment.persoonEvent">persoonEvent</th>
                     <th></th>
                 </tr>
             </thead>
@@ -35,6 +39,18 @@
                     <td><a ui-sref="comment.detail({id:comment.id})">{{comment.id}}</a></td>
                     <td>{{comment.comment}}</td>
                     <td>{{comment.creationDate | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="event.detail({id:comment.event.id})">{{comment.event.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="ouder.detail({id:comment.ouder.id})">{{comment.ouder.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="persoon.detail({id:comment.persoon.id})">{{comment.persoon.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="persoonEvent.detail({id:comment.persoonEvent.id})">{{comment.persoonEvent.id}}</a>
+                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="comment.detail({id:comment.id})"

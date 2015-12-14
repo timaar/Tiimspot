@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -29,6 +31,22 @@ public class Comment implements Serializable {
 
     @Column(name = "creation_date")
     private ZonedDateTime creationDate;
+
+    @ManyToOne
+    @JoinColumn(name = "event_id")
+    private Event event;
+
+    @ManyToOne
+    @JoinColumn(name = "ouder_id")
+    private Ouder ouder;
+
+    @ManyToOne
+    @JoinColumn(name = "persoon_id")
+    private Persoon persoon;
+
+    @ManyToOne
+    @JoinColumn(name = "persoon_event_id")
+    private PersoonEvent persoonEvent;
 
     public Long getId() {
         return id;
@@ -52,6 +70,38 @@ public class Comment implements Serializable {
 
     public void setCreationDate(ZonedDateTime creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public Ouder getOuder() {
+        return ouder;
+    }
+
+    public void setOuder(Ouder ouder) {
+        this.ouder = ouder;
+    }
+
+    public Persoon getPersoon() {
+        return persoon;
+    }
+
+    public void setPersoon(Persoon persoon) {
+        this.persoon = persoon;
+    }
+
+    public PersoonEvent getPersoonEvent() {
+        return persoonEvent;
+    }
+
+    public void setPersoonEvent(PersoonEvent persoonEvent) {
+        this.persoonEvent = persoonEvent;
     }
 
     @Override

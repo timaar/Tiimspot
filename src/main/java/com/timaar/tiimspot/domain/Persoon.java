@@ -56,9 +56,11 @@ public class Persoon implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Comment> comments = new HashSet<>();
 
-    @ManyToMany(mappedBy = "ouders")
-    @JsonIgnore
+    @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "persoon_ouder",
+               joinColumns = @JoinColumn(name="persoons_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="ouders_id", referencedColumnName="ID"))
     private Set<Ouder> ouders = new HashSet<>();
 
     public Long getId() {
@@ -121,16 +123,16 @@ public class Persoon implements Serializable {
         return comments;
     }
 
-    public void setComments(Set<Comment> Comments) {
-        this.comments = Comments;
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     public Set<Ouder> getOuders() {
         return ouders;
     }
 
-    public void setOuders(Set<Ouder> Ouders) {
-        this.ouders = Ouders;
+    public void setOuders(Set<Ouder> ouders) {
+        this.ouders = ouders;
     }
 
     @Override
