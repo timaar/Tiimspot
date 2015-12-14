@@ -23,7 +23,7 @@ spring:
         url: jdbc:postgresql://localhost:5432/Tiimspot
         name:
         username: Tiimspot
-        password:
+        password: tiimspot
     jpa:
         database-platform: com.timaar.tiimspot.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL

@@ -10,6 +10,8 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css assets/styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css assets/styles/main.css -->
@@ -42,6 +44,28 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+        <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.js"></script>
+        <script src="bower_components/messageformat/messageformat.js"></script>
+        <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+        <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+        <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/json3/lib/json3.js"></script>
+        <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+        <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -125,6 +149,55 @@
     <script src="scripts/components/auth/provider/auth.session.service.js"></script>
     <script src="scripts/app/account/sessions/sessions.js"></script>
     <script src="scripts/app/account/sessions/sessions.controller.js"></script>
+    <script src="scripts/app/entities/persoonEvent/persoonEvent.js"></script>
+    <script src="scripts/app/entities/persoonEvent/persoonEvent.controller.js"></script>
+    <script src="scripts/app/entities/persoonEvent/persoonEvent-dialog.controller.js"></script>
+    <script src="scripts/app/entities/persoonEvent/persoonEvent-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/persoonEvent/persoonEvent-detail.controller.js"></script>
+    <script src="scripts/components/entities/persoonEvent/persoonEvent.service.js"></script>
+    <script src="scripts/components/entities/persoonEvent/persoonEvent.search.service.js"></script>
+    <script src="scripts/app/entities/persoon/persoon.js"></script>
+    <script src="scripts/app/entities/persoon/persoon.controller.js"></script>
+    <script src="scripts/app/entities/persoon/persoon-dialog.controller.js"></script>
+    <script src="scripts/app/entities/persoon/persoon-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/persoon/persoon-detail.controller.js"></script>
+    <script src="scripts/components/entities/persoon/persoon.service.js"></script>
+    <script src="scripts/components/entities/persoon/persoon.search.service.js"></script>
+    <script src="scripts/app/entities/comment/comment.js"></script>
+    <script src="scripts/app/entities/comment/comment.controller.js"></script>
+    <script src="scripts/app/entities/comment/comment-dialog.controller.js"></script>
+    <script src="scripts/app/entities/comment/comment-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/comment/comment-detail.controller.js"></script>
+    <script src="scripts/components/entities/comment/comment.service.js"></script>
+    <script src="scripts/components/entities/comment/comment.search.service.js"></script>
+    <script src="scripts/app/entities/adres/adres.js"></script>
+    <script src="scripts/app/entities/adres/adres.controller.js"></script>
+    <script src="scripts/app/entities/adres/adres-dialog.controller.js"></script>
+    <script src="scripts/app/entities/adres/adres-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/adres/adres-detail.controller.js"></script>
+    <script src="scripts/components/entities/adres/adres.service.js"></script>
+    <script src="scripts/components/entities/adres/adres.search.service.js"></script>
+    <script src="scripts/app/entities/event/event.js"></script>
+    <script src="scripts/app/entities/event/event.controller.js"></script>
+    <script src="scripts/app/entities/event/event-dialog.controller.js"></script>
+    <script src="scripts/app/entities/event/event-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/event/event-detail.controller.js"></script>
+    <script src="scripts/components/entities/event/event.service.js"></script>
+    <script src="scripts/components/entities/event/event.search.service.js"></script>
+    <script src="scripts/app/entities/eventScore/eventScore.js"></script>
+    <script src="scripts/app/entities/eventScore/eventScore.controller.js"></script>
+    <script src="scripts/app/entities/eventScore/eventScore-dialog.controller.js"></script>
+    <script src="scripts/app/entities/eventScore/eventScore-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/eventScore/eventScore-detail.controller.js"></script>
+    <script src="scripts/components/entities/eventScore/eventScore.service.js"></script>
+    <script src="scripts/components/entities/eventScore/eventScore.search.service.js"></script>
+    <script src="scripts/app/entities/ouder/ouder.js"></script>
+    <script src="scripts/app/entities/ouder/ouder.controller.js"></script>
+    <script src="scripts/app/entities/ouder/ouder-dialog.controller.js"></script>
+    <script src="scripts/app/entities/ouder/ouder-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/ouder/ouder-detail.controller.js"></script>
+    <script src="scripts/components/entities/ouder/ouder.service.js"></script>
+    <script src="scripts/components/entities/ouder/ouder.search.service.js"></script>
     <!-- endbuild -->
 </body>
 </html>
