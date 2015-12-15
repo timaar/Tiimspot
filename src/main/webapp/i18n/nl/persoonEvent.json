@@ -1,0 +1,22 @@
+{
+    "tiimspotApp": {
+        "persoonEvent" : {
+            "home": {
+                "title": "PersoonEvents",
+                "createLabel": "Maak een nieuwe PersoonEvent",
+                "createOrEditLabel": "Maak of wijzig een PersoonEvent"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u PersoonEvent {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "PersoonEvent"
+            },
+            "aanwezigheidsStatus": "AanwezigheidsStatus",
+            "eventScore": "EventScore",
+            "event": "Event",
+            "persoon": "Persoon",
+            "comment": "Comment"
+        }
+    }
+}

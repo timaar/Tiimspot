@@ -1,0 +1,19 @@
+{
+    "tiimspotApp": {
+        "eventScore" : {
+            "home": {
+                "title": "EventScores",
+                "createLabel": "Maak een nieuwe EventScore",
+                "createOrEditLabel": "Maak of wijzig een EventScore"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u EventScore {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "EventScore"
+            },
+            "discipline": "Discipline",
+            "techniek": "Techniek"
+        }
+    }
+}

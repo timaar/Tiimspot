@@ -1,0 +1,23 @@
+{
+    "tiimspotApp": {
+        "adres" : {
+            "home": {
+                "title": "Adress",
+                "createLabel": "Maak een nieuwe Adres",
+                "createOrEditLabel": "Maak of wijzig een Adres"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u Adres {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Adres"
+            },
+            "straat": "Straat",
+            "huisnummer": "Huisnummer",
+            "busnummer": "Busnummer",
+            "postcode": "Postcode",
+            "gemeente": "Gemeente",
+            "landISO3": "LandISO3"
+        }
+    }
+}

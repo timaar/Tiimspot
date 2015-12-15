@@ -1,0 +1,19 @@
+{
+    "tiimspotApp": {
+        "ouder" : {
+            "home": {
+                "title": "Ouders",
+                "createLabel": "Maak een nieuwe Ouder",
+                "createOrEditLabel": "Maak of wijzig een Ouder"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u Ouder {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Ouder"
+            },
+            "persoon": "Persoon",
+            "comment": "Comment"
+        }
+    }
+}

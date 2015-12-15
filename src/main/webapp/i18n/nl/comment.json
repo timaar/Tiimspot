@@ -1,0 +1,23 @@
+{
+    "tiimspotApp": {
+        "comment" : {
+            "home": {
+                "title": "Comments",
+                "createLabel": "Maak een nieuwe Comment",
+                "createOrEditLabel": "Maak of wijzig een Comment"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u Comment {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Comment"
+            },
+            "comment": "Comment",
+            "creationDate": "CreationDate",
+            "event": "Event",
+            "ouder": "Ouder",
+            "persoon": "Persoon",
+            "persoonEvent": "PersoonEvent"
+        }
+    }
+}

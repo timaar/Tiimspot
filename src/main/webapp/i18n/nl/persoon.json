@@ -1,0 +1,25 @@
+{
+    "tiimspotApp": {
+        "persoon" : {
+            "home": {
+                "title": "Persoons",
+                "createLabel": "Maak een nieuwe Persoon",
+                "createOrEditLabel": "Maak of wijzig een Persoon"
+            },
+            "delete": {
+                "question": "Bent u zeker dat u Persoon {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Persoon"
+            },
+            "voornaam": "Voornaam",
+            "naam": "Naam",
+            "geslacht": "Geslacht",
+            "geboorteDatum": "GeboorteDatum",
+            "telefoonnummer": "Telefoonnummer",
+            "adres": "Adres",
+            "comment": "Comment",
+            "ouder": "Ouder"
+        }
+    }
+}
