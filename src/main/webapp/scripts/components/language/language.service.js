@@ -28,6 +28,7 @@ angular.module('tiimspotApp')
  */
     .constant('LANGUAGES', [
         'en', 'fr'
+        ,'nl'
         //JHipster will add new languages here
     ]
 );
