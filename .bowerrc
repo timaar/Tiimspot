@@ -1,3 +1,5 @@
 {
-    "directory": "src/main/webapp/bower_components"
+    "directory": "src/main/webapp/bower_components",
+	"proxy":"http://bebsumvg003.be.eds.com:3004",
+	"https-proxy":"http://bebsumvg003.be.eds.com:3004"
 }
