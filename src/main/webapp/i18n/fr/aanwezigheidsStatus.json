@@ -1,0 +1,12 @@
+{
+    "tiimspotApp": {
+        "AanwezigheidsStatus" : {
+            "null": "",
+            "ONBEKEND": "ONBEKEND",
+            "GESELECTEERD": "GESELECTEERD",
+            "NIET_GESELECTEERD": "NIET_GESELECTEERD",
+            "VERWITTIGD": "VERWITTIGD",
+            "BLESSURE": "BLESSURE"
+        }
+    }
+}

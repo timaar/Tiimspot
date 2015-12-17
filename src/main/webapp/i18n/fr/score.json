@@ -1,0 +1,11 @@
+{
+    "tiimspotApp": {
+        "Score" : {
+            "null": "",
+            "ONTOELAATBAAR": "ONTOELAATBAAR",
+            "ZWAK": "ZWAK",
+            "NORMAAL": "NORMAAL",
+            "GOED": "GOED"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "tiimspotApp": {
+        "EventType" : {
+            "null": "",
+            "MATCH": "MATCH",
+            "TRAINING": "TRAINING",
+            "TORNOOI": "TORNOOI",
+            "TEAMBUILDING": "TEAMBUILDING"
+        }
+    }
+}
