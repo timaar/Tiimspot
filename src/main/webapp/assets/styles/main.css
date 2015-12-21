@@ -75,6 +75,14 @@ Browser Upgrade Prompt
     background-size: contain;
 }
 
+.elewijtLogo {
+    display: inline-block;
+    width: 451px;
+    height: 500px;
+    background: url("../images/logokcvvelewijt.png") no-repeat center top;
+    background-size: contain;
+}
+
 .pad {
     padding: 10px;
 }

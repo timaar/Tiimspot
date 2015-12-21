@@ -50,7 +50,6 @@
         },
         "messages": {
             "info": {
-                "authenticated": "If you want to <a class=\"alert-link\" href=\"#/login\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
                 "register": "You don't have an account yet? <a class=\"alert-link\" href=\"#/register\">Register a new account</a>"
             },
             "error": {
@@ -116,5 +115,5 @@
         "NotNull": "Field {{fieldName}} cannot be empty!",
         "Size": "Field {{fieldName}} does not meet min/max size requirements!"
     },
-    "footer": "This is your footer"
+    "footer": "Timaar &#169; 2015"
 }

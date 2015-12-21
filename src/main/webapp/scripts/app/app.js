@@ -109,7 +109,7 @@ angular.module('tiimspotApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasca
             urlTemplate: 'i18n/{lang}/{part}.json'
         });
 
-        $translateProvider.preferredLanguage('en');
+        $translateProvider.preferredLanguage('nl');
         $translateProvider.useCookieStorage();
         $translateProvider.useSanitizeValueStrategy('escaped');
         $translateProvider.addInterpolation('$translateMessageFormatInterpolation');

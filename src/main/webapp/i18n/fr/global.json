@@ -49,8 +49,7 @@
             "email.placeholder": "Votre email"
         },
         "messages": {
-            "info": {
-                "authenticated": "Si vous voulez vous <a class=\"alert-link\" href=\"#/login\">connecter</a>, vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=\"admin\" et mot de passe =\"admin\") <br/> - Utilisateur (nom d'utilisateur=\"user\" et mot de passe =\"user\").",
+            "info": {                
                 "register": "Vous n'avez pas encore de compte ? <a class=\"alert-link\" href=\"#/register\">Créer un compte</a>"
             },
             "error": {
@@ -116,5 +115,5 @@
         "NotNull": "Field {{fieldName}} cannot be empty!",
         "Size": "Field {{fieldName}} does not meet min/max size requirements!"
     },
-    "footer": "Ceci est votre pied de page"
+    "footer": "Timaar &#169; 2015"
 }
