@@ -2,7 +2,7 @@
     "relationships": [
         {
             "relationshipId": 1,
-            "relationshipName": "persoon",
+            "relationshipName": "kind",
             "otherEntityName": "persoon",
             "relationshipType": "many-to-many",
             "ownerSide": false,
@@ -14,6 +14,14 @@
             "otherEntityName": "comment",
             "relationshipType": "one-to-many",            
             "otherEntityRelationshipName": "ouder"
+        },
+		{
+            "relationshipId": 3,
+            "relationshipName": "persoon",
+            "otherEntityName": "Persoon",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "fields": [],

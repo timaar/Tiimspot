@@ -12,8 +12,9 @@
             "detail": {
                 "title": "Ouder"
             },
-            "persoon": "Persoon",
-            "comment": "Comment"
+            "kind": "Kind",
+            "comment": "Comment",
+            "persoon": "Persoon"
         }
     }
 }

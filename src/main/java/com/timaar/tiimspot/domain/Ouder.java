@@ -27,12 +27,14 @@ public class Ouder implements Serializable {
     @ManyToMany(mappedBy = "ouders")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Persoon> persoons = new HashSet<>();
+    private Set<Persoon> kinds = new HashSet<>();
 
     @OneToMany(mappedBy = "ouder")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Comment> comments = new HashSet<>();
+
+    @OneToOne private Persoon persoon;
 
     public Long getId() {
         return id;
@@ -42,12 +44,12 @@ public class Ouder implements Serializable {
         this.id = id;
     }
 
-    public Set<Persoon> getPersoons() {
-        return persoons;
+    public Set<Persoon> getKinds() {
+        return kinds;
     }
 
-    public void setPersoons(Set<Persoon> persoons) {
-        this.persoons = persoons;
+    public void setKinds(Set<Persoon> persoons) {
+        this.kinds = persoons;
     }
 
     public Set<Comment> getComments() {
@@ -56,6 +58,14 @@ public class Ouder implements Serializable {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
+    }
+
+    public Persoon getPersoon() {
+        return persoon;
+    }
+
+    public void setPersoon(Persoon Persoon) {
+        this.persoon = Persoon;
     }
 
     @Override

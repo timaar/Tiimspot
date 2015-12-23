@@ -25,12 +25,16 @@
             <thead>
                 <tr>
                     <th translate="global.field.id">ID</th>
+                    <th translate="tiimspotApp.ouder.persoon">persoon</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
                 <tr ng-repeat="ouder in ouders track by ouder.id">
                     <td><a ui-sref="ouder.detail({id:ouder.id})">{{ouder.id}}</a></td>
+                    <td>
+                        <a ui-sref="Persoon.detail({id:ouder.persoon.id})">{{ouder.persoon.id}}</a>
+                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="ouder.detail({id:ouder.id})"
