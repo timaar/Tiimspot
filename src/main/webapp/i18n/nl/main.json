@@ -1,7 +1,7 @@
 {
     "main": {
         "title": "Welkom bij Tiimspot!",
-        "subtitle": "Een app om jou team te beheren",
+        "subtitle": "Verbeter de communcatie in uw Tiim",
         "logged": {
             "message": "U bent aangemeld als gebruiker \"{{username}}\"."
         }                      

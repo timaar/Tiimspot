@@ -1,13 +1,17 @@
 'use strict';
 
 angular.module('tiimspotApp')
-    .controller('RegisterController', function ($scope, $translate, $timeout, Auth) {
+    .controller('RegisterController', function ($scope, $translate, $timeout, Auth, Persoon, Ouder) {
         $scope.success = null;
         $scope.error = null;
         $scope.doNotMatch = null;
         $scope.errorUserExists = null;
         $scope.registerAccount = {};
+        $scope.typeRegistratie= 'ouder';
+        
         $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
+        
+        
 
         $scope.register = function () {
             if ($scope.registerAccount.password !== $scope.confirmPassword) {
@@ -17,10 +21,14 @@ angular.module('tiimspotApp')
                 $scope.doNotMatch = null;
                 $scope.error = null;
                 $scope.errorUserExists = null;
-                $scope.errorEmailExists = null;
+                $scope.errorEmailExists = null;                
 
                 Auth.createAccount($scope.registerAccount).then(function () {
-                    $scope.success = 'OK';
+                	
+                	
+                	
+                	
+                    $scope.success = 'OK';                    
                 }).catch(function (response) {
                     $scope.success = null;
                     if (response.status === 400 && response.data === 'login already in use') {

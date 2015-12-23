@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            <form ng-show="!success" name="form" role="form" novalidate ng-submit="register()" show-validation>
+            <form ng-show="!success" name="form" role="form" novalidate ng-submit="register()" show-validation>            
 
                 <div class="form-group">
                     <label class="control-label" for="login" translate="global.form.username">Username</label>
@@ -49,6 +49,7 @@
                     </p>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <label class="control-label" for="email" translate="global.form.email">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
@@ -72,6 +73,7 @@
                         </p>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <label class="control-label" for="password" translate="global.form.newpassword">New password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
@@ -92,6 +94,7 @@
                     </div>
                     <password-strength-bar password-to-check="registerAccount.password"></password-strength-bar>
                 </div>
+                
                 <div class="form-group">
                     <label class="control-label" for="confirmPassword" translate="global.form.confirmpassword">New password confirmation</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
@@ -111,6 +114,20 @@
                         </p>
                     </div>
                 </div>
+               
+               <div class="form-group">
+            		<label class="control-label" for="typeRegistratie">Ik wil een registratie aanmaken als:</label><br /> 
+            		<label><input type="radio" ng-model="typeRegistratie" value="ouder"> Ouder</label><br />
+            		<label><input type="radio" ng-model="typeRegistratie" value="speler" disabled="true"> Speler</label><br /> <br />
+				</div>
+				
+				 <div class="form-group" ng-show="typeRegistratie == 'ouder'">
+				 	ouder
+				 </div>
+				 
+				 <div class="form-group" ng-show="typeRegistratie == 'speler'">
+				 	TODO speler
+				 </div>				 
 
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="register.form.button">Register</button>
             </form>

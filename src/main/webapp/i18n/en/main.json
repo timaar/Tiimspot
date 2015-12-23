@@ -1,7 +1,7 @@
 {
     "main": {
         "title": "Welcome to Tiimspot!",
-        "subtitle": "An app to manage your team",
+        "subtitle": "Improve the communication in your Tiim",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         }          

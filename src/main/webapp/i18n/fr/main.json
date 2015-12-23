@@ -1,7 +1,7 @@
 {
     "main": {
         "title": "Bienvenue chez Tiimspot!",
-        "subtitle": "Un outil pour gérer votre équipe",
+        "subtitle": "Améliorer la communciation dans votre Tiim",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         }              
