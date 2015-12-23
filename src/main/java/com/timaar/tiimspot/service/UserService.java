@@ -25,6 +25,7 @@ import com.timaar.tiimspot.domain.User;
 import com.timaar.tiimspot.domain.enumeration.Geslacht;
 import com.timaar.tiimspot.repository.AuthorityRepository;
 import com.timaar.tiimspot.repository.PersistentTokenRepository;
+import com.timaar.tiimspot.repository.PersoonRepository;
 import com.timaar.tiimspot.repository.UserRepository;
 import com.timaar.tiimspot.repository.search.UserSearchRepository;
 import com.timaar.tiimspot.security.SecurityUtils;
@@ -45,6 +46,9 @@ public class UserService {
 
     @Inject
     private UserRepository userRepository;    
+    
+    @Inject
+    private PersoonRepository persoonRepository;    
 
     @Inject
     private UserSearchRepository userSearchRepository;
@@ -118,28 +122,31 @@ public class UserService {
         
         Ouder ouder = new Ouder();        
         Persoon persoonOuder = new Persoon();        
-//        ouder.setPersoon(persoonOuder);
+        ouder.setPersoon(persoonOuder);
         newUser.setPersoon(persoonOuder);
         persoonOuder.setVoornaam(userDTO.getOuderVoornaam());
         persoonOuder.setNaam(userDTO.getOuderNaam());
-        persoonOuder.setGeboorteDatum(ZonedDateTime.now()); // TODO 
+        persoonOuder.setGeboorteDatum(userDTO.getOuderGeboorteDatum()); 
         persoonOuder.setTelefoonnummer(userDTO.getOuderTelefoonnummer());        
-        persoonOuder.setGeslacht(Geslacht.M); // TODO modify
+        persoonOuder.setGeslacht(userDTO.getOuderGeslacht());
         Adres ouderAdres = new Adres(userDTO.getOuderStraat(), userDTO.getOuderHuisnummer(), userDTO.getOuderBusnummer(), userDTO.getOuderPostcode(), userDTO.getOuderGemeente());
         persoonOuder.setAdres(ouderAdres);
         
         
         Persoon kind = new Persoon();
-        kind.getOuders().add(ouder);        
+        kind.getOuders().add(ouder);       
+        ouder.getKinds().add(kind);
         kind.setAdres(new Adres(ouderAdres));
-        kind.setGeslacht(Geslacht.M); // TODO modify
+        kind.setGeslacht(userDTO.getKindGeslacht()); 
         kind.setVoornaam(userDTO.getKindVoornaam());
         kind.setNaam(userDTO.getKindNaam());
-        kind.setGeboorteDatum(ZonedDateTime.now());
-        kind.setTelefoonnummer(userDTO.getKindTelefoonnummer());
+        kind.setGeboorteDatum(userDTO.getKindGeboorteDatum());
+        kind.setTelefoonnummer(userDTO.getKindTelefoonnummer());      
+        
         
         userRepository.save(newUser);
-        userSearchRepository.save(newUser);       
+        userSearchRepository.save(newUser);
+        persoonRepository.save(kind);  // owner of the many to many relationship
                 
         log.debug("Created Information for User: {}", newUser);
         return newUser;

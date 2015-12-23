@@ -13,10 +13,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
-import com.timaar.tiimspot.domain.Adres;
 import com.timaar.tiimspot.domain.Authority;
-import com.timaar.tiimspot.domain.Persoon;
 import com.timaar.tiimspot.domain.User;
+import com.timaar.tiimspot.domain.enumeration.Geslacht;
 public class UserDTO {
 
     public static final int PASSWORD_MIN_LENGTH = 5;
@@ -45,6 +44,7 @@ public class UserDTO {
     private String ouderVoornaam, ouderNaam, ouderTelefoonnummer, ouderStraat, ouderHuisnummer, ouderBusnummer, ouderPostcode, ouderGemeente;
     private ZonedDateTime ouderGeboorteDatum, kindGeboorteDatum;    
     private String kindVoornaam, kindNaam, kindTelefoonnummer;
+    private Geslacht ouderGeslacht, kindGeslacht;
 
     public UserDTO() {
     }
@@ -68,7 +68,7 @@ public class UserDTO {
     
     public UserDTO(String login, String password, String email, boolean activated, String langKey, Set<String> authorities,
     		String ouderVoornaam, String ouderNaam, String ouderTelefoonnummer, String ouderStraat, String ouderHuisnummer, String ouderBusnummer, String ouderPostcode, String ouderGemeente,
-    		ZonedDateTime ouderGeboorteDatum, ZonedDateTime kindGeboorteDatum, String kindVoornaam, String kindNaam, String kindTelefoonnummer) {
+    		ZonedDateTime ouderGeboorteDatum, ZonedDateTime kindGeboorteDatum, String kindVoornaam, String kindNaam, String kindTelefoonnummer, Geslacht kindGeslacht, Geslacht ouderGeslacht) {
        this(login, password, email, activated, langKey, authorities);
        this.ouderVoornaam = ouderVoornaam;
        this.ouderNaam = ouderNaam;
@@ -83,6 +83,8 @@ public class UserDTO {
        this.kindVoornaam = kindVoornaam;
        this.kindNaam = kindNaam;
        this.kindTelefoonnummer = kindTelefoonnummer;
+       this.kindGeslacht = ouderGeslacht;
+       this.ouderGeslacht = ouderGeslacht;
     }
 
     public String getOuderVoornaam() {
@@ -159,6 +161,14 @@ public class UserDTO {
 
 	public String getKindTelefoonnummer() {
 		return kindTelefoonnummer;
+	}
+
+	public Geslacht getOuderGeslacht() {
+		return ouderGeslacht;
+	}
+
+	public Geslacht getKindGeslacht() {
+		return kindGeslacht;
 	}
 
 	@Override

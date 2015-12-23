@@ -24,7 +24,7 @@ public class Ouder implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToMany(mappedBy = "ouders", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "ouders", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Persoon> kinds = new HashSet<>();

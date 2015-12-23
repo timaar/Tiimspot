@@ -51,12 +51,12 @@ public class Persoon implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)    private Adres adres;
 
-    @OneToMany(mappedBy = "persoon",cascade = CascadeType.ALL)    
+    @OneToMany(mappedBy = "persoon", cascade = CascadeType.ALL)    
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Comment> comments = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "persoon_ouder",
                joinColumns = @JoinColumn(name="persoons_id", referencedColumnName="ID"),
