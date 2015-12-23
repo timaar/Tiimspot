@@ -45,7 +45,29 @@ public class Adres implements Serializable {
     @Column(name = "land_iso3", nullable = false)
     private String landISO3;
 
-    public Long getId() {
+    public Adres(){
+    	
+    }
+    
+    public Adres(String newStraat, String newHuisnummer, String newBusnummer, String newPostcode, String newGemeente) {
+		this.straat = newStraat;
+		this.huisnummer = newHuisnummer;
+		this.busnummer = newBusnummer;
+		this.postcode = newPostcode;
+		this.gemeente = newGemeente;
+		this.landISO3 = "BEL";
+	}
+    
+    public Adres(Adres adres) {
+		this.straat = adres.straat;
+		this.huisnummer = adres.huisnummer ;
+		this.busnummer = adres.busnummer;
+		this.postcode = adres.postcode;
+		this.gemeente = adres.gemeente;
+		this.landISO3 = adres.landISO3 ;
+	}
+
+	public Long getId() {
         return id;
     }
 

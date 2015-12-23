@@ -24,17 +24,17 @@ public class Ouder implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToMany(mappedBy = "ouders")
+    @ManyToMany(mappedBy = "ouders", cascade = CascadeType.ALL)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Persoon> kinds = new HashSet<>();
 
-    @OneToMany(mappedBy = "ouder")
+    @OneToMany(mappedBy = "ouder", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Comment> comments = new HashSet<>();
 
-    @OneToOne private Persoon persoon;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true) private Persoon persoon;
 
     public Long getId() {
         return id;

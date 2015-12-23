@@ -7,8 +7,6 @@ angular.module('tiimspotApp')
         $scope.doNotMatch = null;
         $scope.errorUserExists = null;
         $scope.registerAccount = {};
-        $scope.ouder = {};
-        $scope.speler = {};
         $scope.typeRegistratie= 'ouder';
         
         $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});

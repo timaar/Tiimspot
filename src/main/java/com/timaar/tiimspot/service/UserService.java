@@ -1,6 +1,7 @@
 package com.timaar.tiimspot.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.List;
@@ -16,16 +17,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.timaar.tiimspot.domain.Adres;
 import com.timaar.tiimspot.domain.Authority;
 import com.timaar.tiimspot.domain.Ouder;
 import com.timaar.tiimspot.domain.Persoon;
 import com.timaar.tiimspot.domain.User;
+import com.timaar.tiimspot.domain.enumeration.Geslacht;
 import com.timaar.tiimspot.repository.AuthorityRepository;
 import com.timaar.tiimspot.repository.PersistentTokenRepository;
 import com.timaar.tiimspot.repository.UserRepository;
 import com.timaar.tiimspot.repository.search.UserSearchRepository;
 import com.timaar.tiimspot.security.SecurityUtils;
 import com.timaar.tiimspot.service.util.RandomUtil;
+import com.timaar.tiimspot.web.rest.dto.UserDTO;
 
 /**
  * Service class for managing users.
@@ -94,34 +98,49 @@ public class UserService {
             });
     }
 
-    public User createUserInformation(String login, String password, String firstName, String lastName, String email,
-        String langKey, String ouderVoornaam) {
-
+    public User createUserInformation(UserDTO userDTO) {    	                
+    	
         User newUser = new User();
         Authority authority = authorityRepository.findOne("ROLE_USER");
         Set<Authority> authorities = new HashSet<>();
-        String encryptedPassword = passwordEncoder.encode(password);
-        newUser.setLogin(login);
+        String encryptedPassword = passwordEncoder.encode(userDTO.getPassword());
+        newUser.setLogin(userDTO.getLogin());
         // new user gets initially a generated password
         newUser.setPassword(encryptedPassword);
-        newUser.setFirstName(firstName);
-        newUser.setLastName(lastName);
-        newUser.setEmail(email);
-        newUser.setLangKey(langKey);
+        newUser.setEmail(userDTO.getEmail().toLowerCase());
+        newUser.setLangKey(userDTO.getLangKey());
         // new user is not active
         newUser.setActivated(false);
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
+        
+        Ouder ouder = new Ouder();        
+        Persoon persoonOuder = new Persoon();        
+//        ouder.setPersoon(persoonOuder);
+        newUser.setPersoon(persoonOuder);
+        persoonOuder.setVoornaam(userDTO.getOuderVoornaam());
+        persoonOuder.setNaam(userDTO.getOuderNaam());
+        persoonOuder.setGeboorteDatum(ZonedDateTime.now()); // TODO 
+        persoonOuder.setTelefoonnummer(userDTO.getOuderTelefoonnummer());        
+        persoonOuder.setGeslacht(Geslacht.M); // TODO modify
+        Adres ouderAdres = new Adres(userDTO.getOuderStraat(), userDTO.getOuderHuisnummer(), userDTO.getOuderBusnummer(), userDTO.getOuderPostcode(), userDTO.getOuderGemeente());
+        persoonOuder.setAdres(ouderAdres);
+        
+        
+        Persoon kind = new Persoon();
+        kind.getOuders().add(ouder);        
+        kind.setAdres(new Adres(ouderAdres));
+        kind.setGeslacht(Geslacht.M); // TODO modify
+        kind.setVoornaam(userDTO.getKindVoornaam());
+        kind.setNaam(userDTO.getKindNaam());
+        kind.setGeboorteDatum(ZonedDateTime.now());
+        kind.setTelefoonnummer(userDTO.getKindTelefoonnummer());
+        
         userRepository.save(newUser);
-        userSearchRepository.save(newUser);
-        
-        Ouder ouder = new Ouder();
-        Persoon persoonOuder = new Persoon();
-        persoonOuder.setVoornaam(ouderVoornaam);
-        
-        
+        userSearchRepository.save(newUser);       
+                
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }

@@ -109,8 +109,8 @@ public class UserResource {
             .findOneById(managedUserDTO.getId())
             .map(user -> {
                 user.setLogin(managedUserDTO.getLogin());
-                user.setFirstName(managedUserDTO.getFirstName());
-                user.setLastName(managedUserDTO.getLastName());
+                user.getPersoon().setVoornaam(managedUserDTO.getOuderVoornaam());
+                user.getPersoon().setNaam(managedUserDTO.getOuderNaam());
                 user.setEmail(managedUserDTO.getEmail());
                 user.setActivated(managedUserDTO.isActivated());
                 user.setLangKey(managedUserDTO.getLangKey());

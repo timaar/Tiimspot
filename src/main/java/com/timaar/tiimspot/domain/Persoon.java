@@ -49,14 +49,14 @@ public class Persoon implements Serializable {
     @Column(name = "telefoonnummer")
     private String telefoonnummer;
 
-    @OneToOne    private Adres adres;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)    private Adres adres;
 
-    @OneToMany(mappedBy = "persoon")
+    @OneToMany(mappedBy = "persoon",cascade = CascadeType.ALL)    
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Comment> comments = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "persoon_ouder",
                joinColumns = @JoinColumn(name="persoons_id", referencedColumnName="ID"),
