@@ -7,6 +7,8 @@ angular.module('tiimspotApp')
         $scope.doNotMatch = null;
         $scope.errorUserExists = null;
         $scope.registerAccount = {};
+        $scope.ouder = {};
+        $scope.speler = {};
         $scope.typeRegistratie= 'ouder';
         
         $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
@@ -23,11 +25,7 @@ angular.module('tiimspotApp')
                 $scope.errorUserExists = null;
                 $scope.errorEmailExists = null;                
 
-                Auth.createAccount($scope.registerAccount).then(function () {
-                	
-                	
-                	
-                	
+                Auth.createAccount($scope.registerAccount).then(function () {                	                	                	                	
                     $scope.success = 'OK';                    
                 }).catch(function (response) {
                     $scope.success = null;

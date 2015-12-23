@@ -41,6 +41,8 @@ public class UserDTO {
     private String langKey;
 
     private Set<String> authorities;
+    
+    private String ouderVoornaam;
 
     public UserDTO() {
     }
@@ -65,7 +67,11 @@ public class UserDTO {
         this.authorities = authorities;
     }
 
-    public String getPassword() {
+    public String getOuderVoornaam() {
+		return ouderVoornaam;
+	}
+
+	public String getPassword() {
         return password;
     }
 

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="vanmeerb (generated)" id="1450871014276-1">
+      <addColumn tableName="persoon_event">
+         <column name="eventScore_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-2">
+      <addColumn tableName="jhi_user">
+         <column name="persoon_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-3">
+      <addColumn tableName="ouder">
+         <column name="persoon_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-4">
+      <addForeignKeyConstraint baseColumnNames="persoon_id"
+                               baseTableName="ouder"
+                               constraintName="FK_1a2333yvbpavmdaityvew3kml"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="persoon"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-5">
+      <addForeignKeyConstraint baseColumnNames="eventScore_id"
+                               baseTableName="persoon_event"
+                               constraintName="FK_depc2aat1t9olkianlrq7cpi5"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="event_score"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-6">
+      <addForeignKeyConstraint baseColumnNames="persoon_id"
+                               baseTableName="jhi_user"
+                               constraintName="FK_oritl0eq2ee0qewovbw0k1ghm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="persoon"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-7">
+      <dropForeignKeyConstraint baseTableName="persoon_event"
+                                constraintName="fk_persoonevent_eventscore_id"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-8">
+      <dropSequence sequenceName="adres_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-9">
+      <dropSequence sequenceName="comment_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-10">
+      <dropSequence sequenceName="event_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-11">
+      <dropSequence sequenceName="event_score_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-12">
+      <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-13">
+      <dropSequence sequenceName="jhi_user_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-14">
+      <dropSequence sequenceName="ouder_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-15">
+      <dropSequence sequenceName="persoon_event_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-16">
+      <dropSequence sequenceName="persoon_id_seq"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-17">
+      <dropUniqueConstraint constraintName="event_adres_id_key" tableName="event"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-18">
+      <dropUniqueConstraint constraintName="persoon_adres_id_key" tableName="persoon"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-19">
+      <dropUniqueConstraint constraintName="persoon_event_event_score_id_key"
+                            tableName="persoon_event"/>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1450871014276-20">
+      <dropColumn columnName="event_score_id" tableName="persoon_event"/>
+   </changeSet>
+</databaseChangeLog>

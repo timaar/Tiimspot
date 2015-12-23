@@ -24,7 +24,14 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            <form ng-show="!success" name="form" role="form" novalidate ng-submit="register()" show-validation>            
+            <form ng-show="!success" name="form" role="form" novalidate ng-submit="register()" show-validation>
+            
+            	<div class="form-group" ng-show="false">
+            	//TODO next version
+            		<label class="control-label" for="typeRegistratie">Ik wil een registratie aanmaken als:</label><br /> 
+            		<label><input type="radio" ng-model="typeRegistratie" value="ouder"> Ouder</label><br />
+            		<label><input type="radio" ng-model="typeRegistratie" value="speler" disabled="true"> Speler</label><br /> <br />
+				</div>            
 
                 <div class="form-group">
                     <label class="control-label" for="login" translate="global.form.username">Username</label>
@@ -113,20 +120,209 @@
                             Your confirmation password cannot be longer than 50 characters.
                         </p>
                     </div>
-                </div>
-               
-               <div class="form-group">
-            		<label class="control-label" for="typeRegistratie">Ik wil een registratie aanmaken als:</label><br /> 
-            		<label><input type="radio" ng-model="typeRegistratie" value="ouder"> Ouder</label><br />
-            		<label><input type="radio" ng-model="typeRegistratie" value="speler" disabled="true"> Speler</label><br /> <br />
-				</div>
+                </div>               
 				
-				 <div class="form-group" ng-show="typeRegistratie == 'ouder'">
-				 	
-				 </div>
+				<div ng-show="typeRegistratie == 'ouder'">				 
+				 	<h2>Gegevens ouder</h2>
+				 	<jh-alert-error></jh-alert-error>			       
+			        <div class="form-group">
+			            <label class="control-label">Voornaam</label>
+			            <input type="text" class="form-control" name="ouderVoornaam" id="field_voornaam_ouder"
+			                    ng-model="registerAccount.ouderVoornaam"
+			                    required ng-minlength="1"
+			                    placeholder="Voornaam ouder" />
+			            <div ng-show="form.ouderVoornaam.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.ouderVoornaam.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			                <p class="help-block"
+			                    ng-show="form.ouderVoornaam.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+			                    This field is required to be at least 1 characters.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label">Achternaam</label>
+			            <input type="text" class="form-control" name="ouderNaam" id="field_naam"
+			                    ng-model="ouder.persoon.naam"
+			                    required 
+			                    placeholder="Achternaam ouder"/>
+			            <div ng-show="form.ouderNaam.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.ouderNaam.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.geslacht" for="field_geslacht">Geslacht</label>
+			            <select class="form-control" name="geslacht" ng-model="ouder.persoon.geslacht" id="field_geslacht" required>
+			                <option value="M" translate="tiimspotApp.Geslacht.M">M</option>
+			                <option value="V" translate="tiimspotApp.Geslacht.V">V</option>
+			            </select>
+			            <div ng-show="form.geslacht.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.geslacht.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.geboorteDatum" for="field_geboorteDatum">GeboorteDatum</label>
+			            <input type="date" class="form-control" name="geboorteDatum" id="field_geboorteDatum"
+			                    ng-model="persoon.geboorteDatum"
+			                    required />
+			            <div ng-show="form.geboorteDatum.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.geboorteDatum.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			                <p class="help-block"
+			                    ng-show="form.geboorteDatum.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
+			                    This field should be a date and time.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.telefoonnummer" for="field_telefoonnummer">Telefoonnummer</label>
+			            <input type="text" class="form-control" name="telefoonnummer" id="field_telefoonnummer"
+			                    ng-model="persoon.telefoonnummer"
+			                    placeholder="Telefoonnummer"  />
+			        </div>
+			
+					<div id="adresOuder">
+						<div class="form-group">
+				            <label class="control-label" translate="tiimspotApp.adres.straat" for="field_straat">Straat</label>
+				            <input type="text" class="form-control" name="straat" id="field_straat"
+				                    ng-model="adres.straat"
+				                    required 
+				                    placeholder="straat"/>
+				            <div ng-show="form.straat.$invalid">
+				                <p class="help-block"
+				                    ng-show="form.straat.$error.required" translate="entity.validation.required">
+				                    This field is required.
+				                </p>
+				            </div>
+				        </div>
+				        <div class="form-group">
+				            <label class="control-label" translate="tiimspotApp.adres.huisnummer" for="field_huisnummer">Huisnummer</label>
+				            <input type="text" class="form-control" name="huisnummer" id="field_huisnummer"
+				                    ng-model="adres.huisnummer"
+				                    required 
+				                    placeholder="Huisnummer"/>
+				            <div ng-show="form.huisnummer.$invalid">
+				                <p class="help-block"
+				                    ng-show="form.huisnummer.$error.required" translate="entity.validation.required">
+				                    This field is required.
+				                </p>
+				            </div>
+				        </div>
+				        <div class="form-group">
+				            <label class="control-label" translate="tiimspotApp.adres.busnummer" for="field_busnummer">Busnummer</label>
+				            <input type="text" class="form-control" name="busnummer" id="field_busnummer"
+				                    ng-model="adres.busnummer"
+				                    placeholder="Busnummer" />
+				        </div>
+				        <div class="form-group">
+				            <label class="control-label" translate="tiimspotApp.adres.postcode" for="field_postcode">Postcode</label>
+				            <input type="text" class="form-control" name="postcode" id="field_postcode"
+				                    ng-model="adres.postcode"
+				                    required
+				                    placeholder="Postcode" />
+				            <div ng-show="form.postcode.$invalid">
+				                <p class="help-block"
+				                    ng-show="form.postcode.$error.required" translate="entity.validation.required">
+				                    This field is required.
+				                </p>
+				            </div>
+				        </div>
+				        <div class="form-group">
+				            <label class="control-label" translate="tiimspotApp.adres.gemeente" for="field_gemeente">Gemeente</label>
+				            <input type="text" class="form-control" name="gemeente" id="field_gemeente"
+				                    ng-model="adres.gemeente"
+				                    required 
+				                    placeholder="Gemeente"/>
+				            <div ng-show="form.gemeente.$invalid">
+				                <p class="help-block"
+				                    ng-show="form.gemeente.$error.required" translate="entity.validation.required">
+				                    This field is required.
+				                </p>
+				            </div>
+				        </div>	 
+        			</div>      			       
+			    </div>
 				 
-				 <div class="form-group" ng-show="typeRegistratie == 'speler'">
-				 	TODO speler
+				 
+				 <div class="form-group">
+				 	<h2>Gegevens kind</h2>
+				 	<jh-alert-error></jh-alert-error>			       
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.voornaam" for="field_voornaam">Voornaam</label>
+			            <input type="text" class="form-control" name="voornaam" id="field_voornaam"
+			                    ng-model="persoon.voornaam"
+			                    required ng-minlength="1" 
+			                    placeholder="Voornaam kind"/>
+			            <div ng-show="form.voornaam.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.voornaam.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			                <p class="help-block"
+			                    ng-show="form.voornaam.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+			                    This field is required to be at least 1 characters.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.naam" for="field_naam">Naam</label>
+			            <input type="text" class="form-control" name="naam" id="field_naam"
+			                    ng-model="persoon.naam"
+			                    required
+			                    placeholder="Achternaam kind" />
+			            <div ng-show="form.naam.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.naam.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.geslacht" for="field_geslacht">Geslacht</label>
+			            <select class="form-control" name="geslacht" ng-model="persoon.geslacht" id="field_geslacht" required>
+			                <option value="M" translate="tiimspotApp.Geslacht.M">M</option>
+			                <option value="V" translate="tiimspotApp.Geslacht.V">V</option>
+			            </select>
+			            <div ng-show="form.geslacht.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.geslacht.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.geboorteDatum" for="field_geboorteDatum">GeboorteDatum</label>
+			            <input type="date" class="form-control" name="geboorteDatum" id="field_geboorteDatum"
+			                    ng-model="persoon.geboorteDatum"
+			                    required />
+			            <div ng-show="form.geboorteDatum.$invalid">
+			                <p class="help-block"
+			                    ng-show="form.geboorteDatum.$error.required" translate="entity.validation.required">
+			                    This field is required.
+			                </p>
+			                <p class="help-block"
+			                    ng-show="form.geboorteDatum.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
+			                    This field should be a date and time.
+			                </p>
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="control-label" translate="tiimspotApp.persoon.telefoonnummer" for="field_telefoonnummer">Telefoonnummer</label>
+			            <input type="text" class="form-control" name="telefoonnummer" id="field_telefoonnummer"
+			                    ng-model="persoon.telefoonnummer"
+			                     />
+			        </div>
+				 								
 				 </div>				 
 
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="register.form.button">Register</button>

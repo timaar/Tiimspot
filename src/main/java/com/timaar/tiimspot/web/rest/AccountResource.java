@@ -63,15 +63,19 @@ public class AccountResource {
                 .orElseGet(() -> {
                     User user = userService.createUserInformation(userDTO.getLogin(), userDTO.getPassword(),
                     userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail().toLowerCase(),
-                    userDTO.getLangKey());
+                    userDTO.getLangKey(), userDTO.getOuderVoornaam());
                     String baseUrl = request.getScheme() + // "http"
                     "://" +                                // "://"
                     request.getServerName() +              // "myhost"
                     ":" +                                  // ":"
                     request.getServerPort() +              // "80"
-                    request.getContextPath();              // "/myContextPath" or "" if deployed in root context
-
+                    request.getContextPath();              // "/myContextPath" or "" if deployed in root context                    
+                    
                     mailService.sendActivationEmail(user, baseUrl);
+                    
+                    
+                    
+                    
                     return new ResponseEntity<>(HttpStatus.CREATED);
                 })
         );

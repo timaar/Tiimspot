@@ -599,7 +599,7 @@
                     <url>jdbc:postgresql://localhost/Tiimspot</url>
                     <defaultSchemaName />
                     <username>Tiimspot</username>
-                    <password />
+                    <password>tiimspot</password>
                     <referenceUrl>hibernate:spring:com.timaar.tiimspot.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>

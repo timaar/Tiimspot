@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.timaar.tiimspot.domain.Authority;
+import com.timaar.tiimspot.domain.Ouder;
+import com.timaar.tiimspot.domain.Persoon;
 import com.timaar.tiimspot.domain.User;
 import com.timaar.tiimspot.repository.AuthorityRepository;
 import com.timaar.tiimspot.repository.PersistentTokenRepository;
@@ -38,7 +40,7 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     @Inject
-    private UserRepository userRepository;
+    private UserRepository userRepository;    
 
     @Inject
     private UserSearchRepository userSearchRepository;
@@ -93,7 +95,7 @@ public class UserService {
     }
 
     public User createUserInformation(String login, String password, String firstName, String lastName, String email,
-        String langKey) {
+        String langKey, String ouderVoornaam) {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne("ROLE_USER");
@@ -114,6 +116,12 @@ public class UserService {
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
         userSearchRepository.save(newUser);
+        
+        Ouder ouder = new Ouder();
+        Persoon persoonOuder = new Persoon();
+        persoonOuder.setVoornaam(ouderVoornaam);
+        
+        
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
