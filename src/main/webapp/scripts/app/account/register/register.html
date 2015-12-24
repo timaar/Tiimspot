@@ -156,10 +156,10 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.geslacht" for="field_geslacht">Geslacht</label>
-			            <select class="form-control" name="geslacht" ng-model="registerAccount.ouderGeslacht" id="field_geslacht" required>
-			                <option value="M" translate="tiimspotApp.Geslacht.M">M</option>
-			                <option value="V" translate="tiimspotApp.Geslacht.V">V</option>
+			            <label class="control-label" translate="global.Geslacht.geslacht" for="field_geslacht1">Geslacht</label>
+			            <select class="form-control" name="geslacht" ng-model="registerAccount.ouderGeslacht" id="field_geslacht1" required>
+			                <option value="M" translate="global.Geslacht.M">M</option>
+			                <option value="V" translate="global.Geslacht.V">V</option>
 			            </select>
 			            <div ng-show="form.geslacht.$invalid">
 			                <p class="help-block"
@@ -169,7 +169,7 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.geboorteDatum" for="field_geboorteDatum">GeboorteDatum</label>
+			            <label class="control-label" for="field_geboorteDatum">GeboorteDatum</label>
 			            <input type="date" class="form-control" name="geboorteDatum" id="field_geboorteDatum"
 			                    ng-model="registerAccount.ouderGeboorteDatum"
 			                    required />
@@ -185,7 +185,7 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.telefoonnummer" for="field_telefoonnummer">Telefoonnummer</label>
+			            <label class="control-label" for="field_telefoonnummer">Telefoonnummer</label>
 			            <input type="text" class="form-control" name="telefoonnummer" id="field_telefoonnummer"
 			                    ng-model="registerAccount.ouderTelefoonnummer"
 			                    placeholder="Telefoonnummer"  />
@@ -193,7 +193,7 @@
 			
 					<div id="adresOuder">
 						<div class="form-group">
-				            <label class="control-label" translate="tiimspotApp.adres.straat" for="field_straat">Straat</label>
+				            <label class="control-label" for="field_straat">Straat</label>
 				            <input type="text" class="form-control" name="straat" id="field_straat"
 				                    ng-model="registerAccount.ouderStraat"
 				                    required 
@@ -206,7 +206,7 @@
 				            </div>
 				        </div>
 				        <div class="form-group">
-				            <label class="control-label" translate="tiimspotApp.adres.huisnummer" for="field_huisnummer">Huisnummer</label>
+				            <label class="control-label" for="field_huisnummer">Huisnummer</label>
 				            <input type="text" class="form-control" name="huisnummer" id="field_huisnummer"
 				                    ng-model="registerAccount.ouderHuisnummer"
 				                    required 
@@ -219,13 +219,13 @@
 				            </div>
 				        </div>
 				        <div class="form-group">
-				            <label class="control-label" translate="tiimspotApp.adres.busnummer" for="field_busnummer">Busnummer</label>
+				            <label class="control-label" for="field_busnummer">Busnummer</label>
 				            <input type="text" class="form-control" name="busnummer" id="field_busnummer"
 				                    ng-model="registerAccount.ouderBusnummer"
 				                    placeholder="Busnummer" />
 				        </div>
 				        <div class="form-group">
-				            <label class="control-label" translate="tiimspotApp.adres.postcode" for="field_postcode">Postcode</label>
+				            <label class="control-label" for="field_postcode">Postcode</label>
 				            <input type="text" class="form-control" name="postcode" id="field_postcode"
 				                    ng-model="registerAccount.ouderPostcode"
 				                    required
@@ -238,7 +238,7 @@
 				            </div>
 				        </div>
 				        <div class="form-group">
-				            <label class="control-label" translate="tiimspotApp.adres.gemeente" for="field_gemeente">Gemeente</label>
+				            <label class="control-label" for="field_gemeente">Gemeente</label>
 				            <input type="text" class="form-control" name="gemeente" id="field_gemeente"
 				                    ng-model="registerAccount.ouderGemeente"
 				                    required 
@@ -258,7 +258,7 @@
 				 	<h2>Gegevens kind</h2>
 				 	<jh-alert-error></jh-alert-error>			       
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.voornaam" for="field_voornaam">Voornaam</label>
+			            <label class="control-label" for="field_voornaam">Voornaam</label>
 			            <input type="text" class="form-control" name="voornaam" id="field_voornaam"
 			                    ng-model="registerAccount.kindVoornaam"
 			                    required ng-minlength="1" 
@@ -275,7 +275,7 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.naam" for="field_naam">Naam</label>
+			            <label class="control-label" for="field_naam">Naam</label>
 			            <input type="text" class="form-control" name="naam" id="field_naam"
 			                    ng-model="registerAccount.kindNaam"
 			                    required
@@ -288,10 +288,10 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.geslacht" for="field_geslacht">Geslacht</label>
-			            <select class="form-control" name="geslacht" ng-model="registerAccount.kindGeslacht" id="field_geslacht" required>
-			                <option value="M" translate="tiimspotApp.Geslacht.M">M</option>
-			                <option value="V" translate="tiimspotApp.Geslacht.V">V</option>
+			            <label class="control-label" translate="global.Geslacht.geslacht" for="field_geslacht2">Geslacht</label>
+			            <select class="form-control" name="geslacht" ng-model="registerAccount.kindGeslacht" id="field_geslacht2" required>
+			                <option value="M" translate="global.Geslacht.M">M</option>
+			                <option value="V" translate="global.Geslacht.V">V</option>
 			            </select>
 			            <div ng-show="form.geslacht.$invalid">
 			                <p class="help-block"
@@ -301,7 +301,7 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.geboorteDatum" for="field_geboorteDatum">GeboorteDatum</label>
+			            <label class="control-label" for="field_geboorteDatum">GeboorteDatum</label>
 			            <input type="date" class="form-control" name="geboorteDatum" id="field_geboorteDatum"
 			                    ng-model="registerAccount.kindGeboorteDatum"
 			                    required />
@@ -317,7 +317,7 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label class="control-label" translate="tiimspotApp.persoon.telefoonnummer" for="field_telefoonnummer">Telefoonnummer</label>
+			            <label class="control-label" for="field_telefoonnummer">Telefoonnummer</label>
 			            <input type="text" class="form-control" name="telefoonnummer" id="field_telefoonnummer"
 			                    ng-model="persoon.telefoonnummer"
 			                     />
@@ -326,11 +326,7 @@
 				 </div>				 
 
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="register.form.button">Register</button>
-            </form>
-            <p></p>
-            <div class="alert alert-warning" translate="global.messages.info.authenticated">
-                If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-            </div>
+            </form>            
         </div>
     </div>
 </div>

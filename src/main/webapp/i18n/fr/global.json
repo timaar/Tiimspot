@@ -48,6 +48,12 @@
             "email": "Email",
             "email.placeholder": "Votre email"
         },
+        "Geslacht" : {
+        	"geslacht": "Sexe",
+            "null": "",
+            "M": "Male",
+            "V": "Female"
+        },
         "messages": {
             "info": {                
                 "register": "Vous n'avez pas encore de compte ? <a class=\"alert-link\" href=\"#/register\">Créer un compte</a>"

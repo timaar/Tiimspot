@@ -19,6 +19,16 @@
                 "userexists": "<strong>Login naam is al geregistreerd!</strong> Gelieve een andere te kiezen.",
                 "emailexists": "<strong>E-mail is al in gebruik!</strong> Gelieve een andere te kiezen."
             }
+        },
+        "persoon" : {                        
+            "voornaam": "Voornaam",
+            "naam": "Naam",
+            "geslacht": "Geslacht",
+            "geboorteDatum": "Geboortedatum",
+            "telefoonnummer": "Telefoonnummer",
+            "adres": "Adres",
+            "comment": "Comment",
+            "ouder": "Ouder"
         }
     }
 }

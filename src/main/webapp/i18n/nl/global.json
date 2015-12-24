@@ -1,6 +1,6 @@
 {
     "global": {
-        "title": "Tiimspot",
+        "title": "Tiimspot",        
         "browsehappy": "U gebruikt een <strong>verouderde</strong> browser. <a href=\"http://browsehappy.com/?locale=en\">upgrade uw browser</a> om de bruikbaarheid te verbeteren.",
         "menu": {
             "home": "Startpagina",
@@ -39,14 +39,20 @@
             "language": "Taal"
         },
         "form": {
-            "username": "Username",
-            "username.placeholder": "Uw username",
+            "username": "Gebruikersnaam",
+            "username.placeholder": "Uw gebruikersnaam",
             "newpassword": "Nieuw wachtwoord",
             "newpassword.placeholder": "Nieuw wachtwoord",
             "confirmpassword": "Nieuw wachtwoord bevestigen",
             "confirmpassword.placeholder": "Bevestig het nieuwe wachtwoord",
             "email": "E-mail",
             "email.placeholder": "Uw e-mail"
+        },
+        "Geslacht" : {
+        	"geslacht": "Geslacht",
+            "null": "",
+            "M": "Man",
+            "V": "Vrouw"
         },
         "messages": {
             "info": {                

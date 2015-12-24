@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tiimspotApp')
-    .controller('RegisterController', function ($scope, $translate, $timeout, Auth, Persoon, Ouder) {
+    .controller('RegisterController', function ($scope, $translate, $timeout, Auth) {
         $scope.success = null;
         $scope.error = null;
         $scope.doNotMatch = null;
@@ -9,9 +9,7 @@ angular.module('tiimspotApp')
         $scope.registerAccount = {};
         $scope.typeRegistratie= 'ouder';
         
-        $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
-        
-        
+        $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});              
 
         $scope.register = function () {
             if ($scope.registerAccount.password !== $scope.confirmPassword) {
