@@ -114,8 +114,8 @@ public class AccountResourceIntTest {
 
         User user = new User();
         user.setLogin("test");
-        user.setFirstName("john");
-        user.setLastName("doe");
+//        user.setFirstName("john");
+//        user.setLastName("doe");
         user.setEmail("john.doe@jhipter.com");
         user.setAuthorities(authorities);
         when(mockUserService.getUserWithAuthorities()).thenReturn(user);
