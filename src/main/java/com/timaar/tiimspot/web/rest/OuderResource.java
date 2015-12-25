@@ -4,6 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.timaar.tiimspot.domain.Ouder;
 import com.timaar.tiimspot.repository.OuderRepository;
 import com.timaar.tiimspot.repository.search.OuderSearchRepository;
+import com.timaar.tiimspot.security.AuthoritiesConstants;
 import com.timaar.tiimspot.web.rest.util.HeaderUtil;
 import com.timaar.tiimspot.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;

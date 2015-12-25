@@ -17,7 +17,7 @@
                         <span class="hidden-sm" translate="global.menu.home">Home</span>
                     </a>
                 </li>
-                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer" has-authority="ROLE_ADMIN">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                         <span>
                             <span class="glyphicon glyphicon-th-list"></span>
@@ -60,7 +60,7 @@
                             &#xA0;<span translate="global.menu.account.settings">Settings</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-lock"></span>
                             &#xA0;<span translate="global.menu.account.password">Password</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
+                        <li ui-sref-active="active" ng-switch-when="true" has-authority="ROLE_ADMIN"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
                             &#xA0;<span translate="global.menu.account.sessions">Sessions</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
                             &#xA0;<span translate="global.menu.account.logout">Sign out</span></a></li>

@@ -7,7 +7,7 @@ angular.module('tiimspotApp')
                 parent: 'entity',
                 url: '/ouders',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'tiimspotApp.ouder.home.title'
                 },
                 views: {
@@ -28,7 +28,7 @@ angular.module('tiimspotApp')
                 parent: 'entity',
                 url: '/ouder/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'tiimspotApp.ouder.detail.title'
                 },
                 views: {
@@ -51,7 +51,7 @@ angular.module('tiimspotApp')
                 parent: 'ouder',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
@@ -76,7 +76,7 @@ angular.module('tiimspotApp')
                 parent: 'ouder',
                 url: '/{id}/edit',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
@@ -99,7 +99,7 @@ angular.module('tiimspotApp')
                 parent: 'ouder',
                 url: '/{id}/delete',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
