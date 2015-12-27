@@ -32,17 +32,19 @@ public class PersoonEvent implements Serializable {
     @Column(name = "aanwezigheids_status", nullable = false)
     private AanwezigheidsStatus aanwezigheidsStatus;
 
-    @OneToOne    private EventScore eventScore;
+    @OneToOne 
+    @JoinColumn(name="event_score_id")
+    private EventScore eventScore;
 
     @ManyToOne
     @JoinColumn(name = "event_id")
     private Event event;
-
+    
     @ManyToOne
     @JoinColumn(name = "persoon_id")
     private Persoon persoon;
 
-    @OneToMany(mappedBy = "persoonEvent")
+    @OneToMany(mappedBy = "persoonEvent", cascade = CascadeType.ALL)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Comment> comments = new HashSet<>();

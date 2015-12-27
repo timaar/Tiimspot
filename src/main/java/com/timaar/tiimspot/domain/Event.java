@@ -42,7 +42,8 @@ public class Event implements Serializable {
     @Column(name = "type", nullable = false)
     private EventType type;
 
-    @OneToOne    private Adres adres;
+    @OneToOne (cascade = CascadeType.ALL, orphanRemoval = true) 
+    private Adres adres;
 
     @OneToMany(mappedBy = "event")
     @JsonIgnore

@@ -61,9 +61,9 @@
    <changeSet author="vanmeerb (generated)" id="1450871014276-11">
       <dropSequence sequenceName="event_score_id_seq"/>
    </changeSet>
-   <changeSet author="vanmeerb (generated)" id="1450871014276-12">
-      <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
-   </changeSet>
+<!--    <changeSet author="vanmeerb (generated)" id="1450871014276-12"> -->
+<!--       <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/> -->
+<!--    </changeSet> -->
    <changeSet author="vanmeerb (generated)" id="1450871014276-13">
       <dropSequence sequenceName="jhi_user_id_seq"/>
    </changeSet>

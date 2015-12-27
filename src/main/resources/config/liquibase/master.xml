@@ -14,4 +14,8 @@
     <include file="classpath:config/liquibase/changelog/20151207191547_added_entity_PersoonEvent.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151223114306_changelog.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151223120006_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151226210858_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151226212641_changelog.xml" relativeToChangelogFile="false"/>
+    
+    
 </databaseChangeLog>

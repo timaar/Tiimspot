@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="vanmeerb (generated)" id="1451165207318-1">
+      <addColumn tableName="persoon_event">
+         <column name="event_score_id" type="int8"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="vanmeerb (generated)" id="1451165207318-2">
+      <dropColumn columnName="eventScore_id" tableName="persoon_event"/>
+   </changeSet>
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-3"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="event_id" -->
+<!--                        defaultValueComputed="nextval('jhi_persistent_audit_event_event_id_seq'::regclass)" -->
+<!--                        tableName="jhi_persistent_audit_event"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" -->
+<!--                         columnName="event_id" -->
+<!--                         tableName="jhi_persistent_audit_event"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-4"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('adres_id_seq'::regclass)" -->
+<!--                        tableName="adres"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="adres"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-5"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('comment_id_seq'::regclass)" -->
+<!--                        tableName="comment"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="comment"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-6"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('event_id_seq'::regclass)" -->
+<!--                        tableName="event"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="event"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-7"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('event_score_id_seq'::regclass)" -->
+<!--                        tableName="event_score"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="event_score"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-8"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('jhi_user_id_seq'::regclass)" -->
+<!--                        tableName="jhi_user"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="jhi_user"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-9"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('ouder_id_seq'::regclass)" -->
+<!--                        tableName="ouder"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="ouder"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-10"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('persoon_id_seq'::regclass)" -->
+<!--                        tableName="persoon"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="persoon"/> -->
+<!--    </changeSet> -->
+<!--    <changeSet author="vanmeerb (generated)" id="1451165207318-11"> -->
+<!--       <addDefaultValue columnDataType="bigint" -->
+<!--                        columnName="id" -->
+<!--                        defaultValueComputed="nextval('persoon_event_id_seq'::regclass)" -->
+<!--                        tableName="persoon_event"/> -->
+<!--       <addAutoIncrement columnDataType="bigint" columnName="id" tableName="persoon_event"/> -->
+<!--    </changeSet> -->
+</databaseChangeLog>

@@ -11,7 +11,7 @@
 
     <groupId>com.timaar.tiimspot</groupId>
     <artifactId>tiimspot</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Tiimspot</name>
 
